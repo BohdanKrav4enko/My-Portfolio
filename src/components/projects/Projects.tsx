@@ -4,6 +4,7 @@ import prev1 from "../../assets/kinoPotok Preview.webp";
 import prev2 from "../../assets/shop Preview.webp";
 import prev3 from "../../assets/portfolio Preview.webp";
 
+
 import {
     FaGithub,
     FaExternalLinkAlt, FaStar

@@ -1,6 +1,7 @@
 import * as S from "./styles/HeroStyles.tsx";
 import img from '../../assets/avatar.webp'
 
+
 export const Hero = () => {
     return (
         <S.Section id="home">
