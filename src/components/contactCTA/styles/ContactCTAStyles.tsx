@@ -72,7 +72,7 @@ export const Title = styled.h2`
 
     margin: 0 auto 24px;
 
-    font-size: clamp(42px, 6vw, 64px);
+    font-size: clamp(48px, 7vw, 72px);
 
     line-height: 1.1;
     text-align: center;
@@ -85,6 +85,9 @@ export const Title = styled.h2`
     @media (max-width: 480px) {
         font-size: 28px;
         line-height: 1.2;
+    }
+    @media (max-width: 480px) {
+        font-size: 48px;
     }
 `;
 export const Text = styled.p`

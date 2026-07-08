@@ -80,6 +80,9 @@ export const Title = styled.h2`
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
+    @media (max-width: 480px) {
+        font-size: 48px;
+    }
 `;
 
 export const Subtitle = styled.p`
