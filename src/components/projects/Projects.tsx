@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import * as S from "./styles/ProjectsStyle";
-import prev1 from "../../assets/KinoPotok Preview.webp";
-import prev2 from "../../assets/Shop Preview.webp";
-import prev3 from "../../assets/Portfolio Preview.webp";
+import prev1 from "../../assets/kinoPotok Preview.webp";
+import prev2 from "../../assets/shop Preview.webp";
+import prev3 from "../../assets/portfolio Preview.webp";
 
 import {
     FaGithub,
