@@ -28,7 +28,10 @@ export const Hero = () => {
                             Contact Me →
                         </S.PrimaryButton>
 
-                        <S.SecondaryButton>
+                        <S.SecondaryButton
+                            href="/Bohdan_Kravchenko_CV_en.pdf"
+                            download
+                        >
                             Download CV ↓
                         </S.SecondaryButton>
                     </S.Buttons>

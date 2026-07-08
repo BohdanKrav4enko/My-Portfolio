@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const Section = styled.section`
     min-height: 100vh;
-
     display: flex;
     align-items: center;
 
     padding: 120px 40px;
 
     @media (max-width: 768px) {
-        padding: 140px 20px 80px;
+        padding: 100px 20px 40px;
     }
 `;
 
@@ -21,22 +20,29 @@ export const Container = styled.div`
 
     display: grid;
     grid-template-columns: 1fr 550px;
-
     gap: 80px;
     align-items: center;
 
     @media (max-width: 1100px) {
         grid-template-columns: 1fr;
+        gap: 32px;
         text-align: center;
     }
 `;
 
 export const Left = styled.div`
     @media (max-width: 1100px) {
+        order: 1;
+    }
+`;
+export const Right = styled.div`
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 1100px) {
         order: 2;
     }
 `;
-
 export const Badge = styled.div`
     display: inline-flex;
     align-items: center;
@@ -49,7 +55,7 @@ export const Badge = styled.div`
     background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.08);
 
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 
     @media (max-width: 1100px) {
         margin-left: auto;
@@ -59,11 +65,10 @@ export const Badge = styled.div`
 
 export const Title = styled.h1`
     font-size: clamp(56px, 10vw, 120px);
-
     line-height: .9;
     font-weight: 800;
 
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 
     span {
         background: linear-gradient(
@@ -79,11 +84,12 @@ export const Title = styled.h1`
     }
 
     @media (max-width: 768px) {
-        font-size: 56px;
+        font-size: 48px;
     }
 
     @media (max-width: 480px) {
-        font-size: 42px;
+        font-size: 38px;
+        line-height: 1;
     }
 `;
 
@@ -93,9 +99,9 @@ export const Description = styled.p`
     color: #9f9f9f;
 
     font-size: 24px;
-    line-height: 1.8;
+    line-height: 1.7;
 
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 
     @media (max-width: 1100px) {
         margin-left: auto;
@@ -120,8 +126,8 @@ export const Buttons = styled.div`
     }
 
     @media (max-width: 480px) {
+        width: 100%;
         flex-direction: column;
-        align-items: center;
     }
 `;
 
@@ -129,6 +135,7 @@ export const PrimaryButton = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 180px;
     height: 64px;
 
@@ -149,100 +156,77 @@ export const PrimaryButton = styled.a`
 
     cursor: pointer;
 
-    position: relative;
-    overflow: hidden;
-
     transition:
-            transform .3s ease,
-            box-shadow .3s ease;
+            transform .25s ease,
+            box-shadow .25s ease,
+            opacity .25s ease;
 
     box-shadow:
-            0 10px 30px rgba(124,92,255,.25);
+            0 8px 20px rgba(124, 92, 255, .25);
 
     &:hover {
-        transform:
-                translateY(-4px)
-                scale(1.03);
-
+        transform: translateY(-2px);
         box-shadow:
-                0 20px 45px rgba(124,92,255,.45);
+                0 12px 28px rgba(124, 92, 255, .35);
     }
 
     &:active {
-        transform:
-                translateY(-1px)
-                scale(.98);
+        transform: translateY(0);
     }
 
-    &::before {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: -100%;
-
+    @media (max-width: 480px) {
         width: 100%;
-        height: 100%;
-
-        background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,.25),
-                transparent
-        );
-
-        transition: .7s;
-    }
-
-    &:hover::before {
-        left: 100%;
     }
 `;
 
-export const SecondaryButton = styled.button`
-    height: 64px;
+export const SecondaryButton = styled.a`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    height: 64px;
     padding: 0 32px;
 
-    background: transparent;
-
-    border: 1px solid rgba(255,255,255,.12);
     border-radius: 999px;
 
+    border: 1px solid rgba(255,255,255,.12);
+
+    background: rgba(255,255,255,.02);
+
     color: white;
+    text-decoration: none;
 
     font-size: 18px;
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: .3s ease;
+    transition:
+            transform .25s ease,
+            border-color .25s ease,
+            background .25s ease,
+            box-shadow .25s ease;
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
 
-        border-color: #7c5cff;
+        border-color: rgba(124,92,255,.5);
 
         background: rgba(124,92,255,.08);
 
         box-shadow:
-                0 10px 30px rgba(124,92,255,.2);
+                0 8px 20px rgba(124,92,255,.15);
     }
 
     &:active {
-        transform: translateY(-1px);
+        transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
     }
 `;
 
-export const Right = styled.div`
-    display: flex;
-    justify-content: center;
-
-    @media (max-width: 1100px) {
-        order: 1;
-    }
-`;
 
 export const ImageWrapper = styled.div`
     width: 500px;
@@ -258,7 +242,6 @@ export const ImageWrapper = styled.div`
         content: "";
 
         position: absolute;
-
         inset: -3px;
 
         background: linear-gradient(
@@ -277,13 +260,14 @@ export const ImageWrapper = styled.div`
     }
 
     @media (max-width: 768px) {
-        width: 380px;
-        height: 460px;
+        width: 240px;
+        height: 300px;
     }
 
     @media (max-width: 480px) {
-        width: 280px;
-        height: 340px;
+        width: 180px;
+        height: 220px;
+        border-radius: 24px;
     }
 `;
 export const Avatar = styled.img`
@@ -293,11 +277,9 @@ export const Avatar = styled.img`
     object-fit: cover;
     object-position: center top;
 
-    border-radius: 36px;
+    border-radius: inherit;
 
-    transition:
-        transform .5s ease,
-        filter .5s ease;
+    transition: transform .5s ease;
 
     &:hover {
         transform: scale(1.03);

@@ -165,8 +165,6 @@ export const ContactButton = styled.a`
     background: linear-gradient(
             135deg,
             #00d4ff 0%,
-            #00d4ff 35%,
-            #7c5cff 65%,
             #7c5cff 100%
     );
 

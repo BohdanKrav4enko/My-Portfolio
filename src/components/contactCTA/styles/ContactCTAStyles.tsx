@@ -5,12 +5,17 @@ export const Section = styled.section`
     margin: 0 auto;
     padding: 120px 40px;
     scroll-margin-top: 120px;
+
+    @media (max-width: 768px) {
+        padding: 80px 20px;
+    }
 `;
 export const Phone = styled.a`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+
+    margin-bottom: 24px;
 
     color: #00d4ff;
     text-decoration: none;
@@ -19,21 +24,20 @@ export const Phone = styled.a`
     font-weight: 600;
 
     transition:
-        color .3s ease,
-        transform .3s ease;
+            color .25s ease,
+            transform .25s ease;
 
     &:hover {
         color: #7c5cff;
-        transform: translateY(-3px);
+        transform: translateY(-2px);
     }
 
-    &:active {
-        transform: translateY(-1px);
+    @media (max-width: 480px) {
+        font-size: 18px;
     }
 `;
 export const Card = styled.div`
     position: relative;
-
     overflow: hidden;
 
     padding: 100px 40px;
@@ -51,36 +55,62 @@ export const Card = styled.div`
             rgba(255,255,255,.03);
 
     border: 1px solid rgba(255,255,255,.08);
+
+    @media (max-width: 768px) {
+        padding: 60px 24px;
+        border-radius: 28px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 48px 20px;
+        border-radius: 24px;
+    }
 `;
 
 export const Title = styled.h2`
     max-width: 750px;
 
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
 
     font-size: clamp(42px, 6vw, 64px);
 
     line-height: 1.1;
-
     text-align: center;
-
     text-wrap: balance;
-`;
 
+    @media (max-width: 768px) {
+        font-size: 36px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+`;
 export const Text = styled.p`
     color: #999;
+
     max-width: 600px;
-    margin: 0 auto 48px;
+
+    margin: 0 auto 32px;
+
     line-height: 1.8;
+    font-size: 18px;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
 `;
 
 export const Button = styled.a`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 
-    padding: 18px 42px;
+    width: 220px;
+    height: 60px;
 
     border-radius: 999px;
     border: none;
@@ -99,53 +129,27 @@ export const Button = styled.a`
 
     cursor: pointer;
 
-    position: relative;
-    overflow: hidden;
+    transition:
+            transform .25s ease,
+            box-shadow .25s ease;
 
     box-shadow:
-            0 10px 30px rgba(124, 92, 255, .25);
-
-    transition:
-            transform .3s ease,
-            box-shadow .3s ease;
+            0 10px 30px rgba(124,92,255,.25);
 
     &:hover {
-        transform:
-                translateY(-5px)
-                scale(1.03);
+        transform: translateY(-2px);
 
         box-shadow:
-                0 20px 45px rgba(124, 92, 255, .45);
+                0 14px 35px rgba(124,92,255,.35);
     }
 
     &:active {
-        transform:
-                translateY(-2px)
-                scale(.98);
+        transform: translateY(0);
     }
 
-    &::before {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: -100%;
-
+    @media (max-width: 480px) {
         width: 100%;
-        height: 100%;
-
-        background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,.25),
-                transparent
-        );
-
-        transition: left .7s ease;
-    }
-
-    &:hover::before {
-        left: 100%;
+        height: 56px;
+        font-size: 16px;
     }
 `;
