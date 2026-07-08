@@ -213,12 +213,14 @@ export const Description = styled.p`
 `;
 
 export const Tags = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     flex-wrap: nowrap;
     margin-top: auto;
     min-height: 36px;
     gap: 8px;
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+    }
 `;
 
 export const Tag = styled.div`
