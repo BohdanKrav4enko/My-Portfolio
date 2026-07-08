@@ -8,7 +8,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
-    font-size: 56px;
+    font-size: clamp(48px, 7vw, 72px);
     text-align: center;
     margin-bottom: 20px;
 `;
@@ -56,7 +56,7 @@ const Card = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    transition: 0.3s;
+    transition: .3s;
 
     &:hover {
         transform: translateY(-8px);
@@ -68,14 +68,36 @@ const Card = styled.div`
     }
 
     h3 {
-        font-size: 30px;
+        font-size: clamp(22px, 3vw, 30px);
+        line-height: 1.2;
         margin-bottom: 20px;
+
+        text-wrap: balance;
     }
 
     p {
         color: #9a9a9a;
         line-height: 1.8;
         max-width: 500px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 32px;
+        min-height: 260px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 28px 24px;
+        min-height: auto;
+
+        h3 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
     }
 `;
 

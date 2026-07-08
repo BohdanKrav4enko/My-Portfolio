@@ -12,7 +12,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
-    font-size: clamp(40px, 7vw, 56px);
+    font-size: clamp(48px, 7vw, 72px);
 
     text-align: center;
 
@@ -97,11 +97,10 @@ export const Card = styled.div`
     @media (max-width: 480px) {
         width: calc(50% - 8px);
 
-        justify-content: center;
+        justify-content: flex-start;
+        padding: 0 16px;
 
-        padding: 0 12px;
-
-        font-size: 13px;
+        gap: 10px;
     }
 
     @media (max-width: 360px) {

@@ -65,7 +65,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 72px;
+    font-size: clamp(48px, 7vw, 72px);
 
     span {
         background: linear-gradient(
@@ -165,10 +165,28 @@ export const Card = styled.div`
 
 export const Image = styled.img`
     width: 100%;
+    display: block;
     height: 220px;
     object-fit: cover;
     cursor: pointer;
     transition: .3s;
+`;
+export const Link = styled.a`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: #9f9f9f;
+
+    font-size: 14px;
+
+    transition: .25s ease;
+
+    &:hover {
+        color: white;
+    }
 `;
 
 export const Content = styled.div`
@@ -192,22 +210,40 @@ export const Description = styled.p`
 `;
 
 export const Tags = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
+    margin-top: auto;
+    min-height: 36px;
+    gap: 8px;
 `;
 
 export const Tag = styled.div`
-    padding: 8px 14px;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 36px;
+
+    padding: 0 12px;
+
     border-radius: 999px;
+
     background: rgba(255,255,255,.05);
-    font-size: 13px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
 `;
 
 export const Links = styled.div`
-    margin-top: 24px;
     display: flex;
-    gap: 12px;
+    gap: 20px;
+
+    margin-top: auto;
+    padding-top: 24px;
 `;
 
 export const IconButton = styled.a`

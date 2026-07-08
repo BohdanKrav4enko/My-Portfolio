@@ -1,14 +1,11 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import * as S from "./styles/ProjectsStyle";
 import prev1 from "../../assets/kinoPotok Preview.webp";
 import prev2 from "../../assets/shop Preview.webp";
 import prev3 from "../../assets/portfolio Preview.webp";
 
 
-import {
-    FaGithub,
-    FaExternalLinkAlt, FaStar
-} from "react-icons/fa";
+import {FaExternalLinkAlt, FaGithub, FaStar} from "react-icons/fa";
 
 const projects = [
     {
@@ -85,7 +82,13 @@ export const Projects = () => {
                     {projects.map((project) => (
                         <S.Card key={project.title}>
 
-                            <S.Image src={project.image}/>
+                            <S.Link
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <S.Image src={project.image} alt={project.title} />
+                            </S.Link>
 
                             <S.Content>
 
@@ -106,13 +109,13 @@ export const Projects = () => {
                                 </S.Tags>
 
                                 <S.Links>
-                                    <S.IconButton target={'_blank'} href={project.git}>
-                                        <FaGithub/>
-                                    </S.IconButton>
+                                    <S.Link target={'_blank'} href={project.git}>
+                                        <FaGithub/>GitHub
+                                    </S.Link>
 
-                                    <S.IconButton target={'_blank'} href={project.link}>
-                                        <FaExternalLinkAlt/>
-                                    </S.IconButton>
+                                    <S.Link target={'_blank'} href={project.link}>
+                                        <FaExternalLinkAlt/>Live Demo
+                                    </S.Link>
                                 </S.Links>
 
                             </S.Content>

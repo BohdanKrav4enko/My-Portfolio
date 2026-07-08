@@ -32,15 +32,17 @@ export const Container = styled.div`
 
 export const Left = styled.div`
     @media (max-width: 1100px) {
-        order: 1;
+        order: 2;
     }
 `;
+
 export const Right = styled.div`
     display: flex;
     justify-content: center;
 
     @media (max-width: 1100px) {
-        order: 2;
+        order: 1;
+        margin-bottom: 32px;
     }
 `;
 export const Badge = styled.div`
@@ -58,6 +60,7 @@ export const Badge = styled.div`
     margin-bottom: 24px;
 
     @media (max-width: 1100px) {
+        margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -101,7 +104,7 @@ export const Description = styled.p`
     font-size: 24px;
     line-height: 1.7;
 
-    margin-bottom: 36px;
+    margin-bottom: 20px;
 
     @media (max-width: 1100px) {
         margin-left: auto;
@@ -127,7 +130,6 @@ export const Buttons = styled.div`
 
     @media (max-width: 480px) {
         width: 100%;
-        flex-direction: column;
     }
 `;
 
@@ -136,8 +138,8 @@ export const PrimaryButton = styled.a`
     align-items: center;
     justify-content: center;
 
-    width: 180px;
-    height: 64px;
+    width: 170px;
+    height: 54px;
 
     border: none;
     border-radius: 999px;
@@ -151,21 +153,21 @@ export const PrimaryButton = styled.a`
     color: white;
     text-decoration: none;
 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
 
     transition:
             transform .25s ease,
-            box-shadow .25s ease,
-            opacity .25s ease;
+            box-shadow .25s ease;
 
     box-shadow:
             0 8px 20px rgba(124, 92, 255, .25);
 
     &:hover {
         transform: translateY(-2px);
+
         box-shadow:
                 0 12px 28px rgba(124, 92, 255, .35);
     }
@@ -175,7 +177,9 @@ export const PrimaryButton = styled.a`
     }
 
     @media (max-width: 480px) {
-        width: 100%;
+        width: 150px;
+        height: 50px;
+        font-size: 14px;
     }
 `;
 
@@ -184,8 +188,8 @@ export const SecondaryButton = styled.a`
     align-items: center;
     justify-content: center;
 
-    height: 64px;
-    padding: 0 32px;
+    width: 170px;
+    height: 54px;
 
     border-radius: 999px;
 
@@ -196,7 +200,7 @@ export const SecondaryButton = styled.a`
     color: white;
     text-decoration: none;
 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -223,51 +227,53 @@ export const SecondaryButton = styled.a`
     }
 
     @media (max-width: 480px) {
-        width: 100%;
+        width: 150px;
+        height: 50px;
+        font-size: 14px;
     }
 `;
 
 
 export const ImageWrapper = styled.div`
-    width: 500px;
-    height: 600px;
-
-    border-radius: 36px;
-
-    background: #111;
+    width: 420px;
+    height: 420px;
 
     position: relative;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::before {
         content: "";
 
         position: absolute;
-        inset: -3px;
+        inset: -10px;
+
+        border-radius: 50%;
 
         background: linear-gradient(
                 135deg,
-                #00d4ff 0%,
-                #00d4ff 35%,
-                #7c5cff 65%,
-                #7c5cff 100%
+                #00d4ff,
+                #7c5cff
         );
 
-        border-radius: 40px;
+        filter: blur(30px);
+        opacity: .8;
 
         z-index: -1;
-
-        filter: blur(25px);
     }
 
     @media (max-width: 768px) {
-        width: 240px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
     }
 
     @media (max-width: 480px) {
         width: 180px;
-        height: 220px;
-        border-radius: 24px;
+        height: 180px;
     }
 `;
 export const Avatar = styled.img`
@@ -275,11 +281,11 @@ export const Avatar = styled.img`
     height: 100%;
 
     object-fit: cover;
-    object-position: center top;
+    object-position: center 20%;
 
-    border-radius: inherit;
+    border-radius: 50%;
 
-    transition: transform .5s ease;
+    transition: transform .3s ease;
 
     &:hover {
         transform: scale(1.03);
