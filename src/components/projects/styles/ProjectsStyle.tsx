@@ -224,7 +224,6 @@ export const Tags = styled.div`
 `;
 
 export const Tag = styled.div`
-    flex: 1;
 
     display: flex;
     align-items: center;
