@@ -119,12 +119,12 @@ const Card = styled.div`
 
 
         h3 {
-            font-size: 24px;
+            font-size: 22px;
         }
 
 
         p {
-            font-size: 15px;
+            font-size: 12px;
 
             line-height: 1.7;
         }
