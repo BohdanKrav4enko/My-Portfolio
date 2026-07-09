@@ -1,8 +1,9 @@
 import * as S from "./styles/ScrollIndicatorStyle"
+import {scrollToSection} from "../../utils/scrollToSection.ts";
 
 export const ScrollIndicator = () => {
     return (
-        <S.ScrollWrapper href="#technology">
+        <S.ScrollWrapper onClick={()=> scrollToSection("technology")}>
             <S.Mouse>
                 <S.Wheel />
             </S.Mouse>

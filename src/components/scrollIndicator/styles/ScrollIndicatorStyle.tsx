@@ -16,6 +16,7 @@ export const ScrollWrapper = styled.a`
     position: absolute;
     left: 50%;
     bottom: 40px;
+    cursor: pointer;
 
     transform: translateX(-50%);
 
