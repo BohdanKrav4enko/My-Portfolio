@@ -65,7 +65,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: clamp(48px, 7vw, 72px);
+    font-size: clamp(32px, 7vw, 72px);
 
     span {
         background: linear-gradient(
@@ -248,22 +248,4 @@ export const Links = styled.div`
 
     margin-top: auto;
     padding-top: 24px;
-`;
-
-export const IconButton = styled.a`
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-    border: none;
-
-    background: rgba(255,255,255,.05);
-
-    color: white;
-
-    cursor: pointer;
 `;

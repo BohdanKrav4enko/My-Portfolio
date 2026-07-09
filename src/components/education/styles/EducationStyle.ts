@@ -10,7 +10,7 @@ export const Section = styled.section`
 export const Title = styled.h2`
     text-align: center;
 
-    font-size: clamp(48px, 7vw, 72px);
+    font-size: clamp(32px, 7vw, 72px);
 
     margin-bottom: 20px;
 
