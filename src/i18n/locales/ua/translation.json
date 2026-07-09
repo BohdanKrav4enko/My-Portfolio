@@ -10,7 +10,7 @@
     "contactButton": "Зв'язатися"
   },
   "hero": {
-    "badge": "🟢 Відкритий для нових проєктів",
+    "badge": "🟢 Відкритий до нових проєктів",
     "titleFirst": "Frontend",
     "titleSecond": "Developer",
     "description": "Frontend-розробник, який створює сучасні, адаптивні та продуктивні веб-застосунки з використанням React і TypeScript.",
