@@ -29,6 +29,8 @@ export const TopRow = styled.div`
     gap: 24px;
     margin-bottom: 24px;
 
+    align-items: stretch;
+
     @media (max-width: 992px) {
         grid-template-columns: 1fr;
     }
@@ -39,6 +41,8 @@ export const BottomRow = styled.div`
     grid-template-columns: 1fr 2fr;
     gap: 24px;
 
+    align-items: stretch;
+
     @media (max-width: 992px) {
         grid-template-columns: 1fr;
     }
@@ -46,13 +50,14 @@ export const BottomRow = styled.div`
 
 const Card = styled.div`
     background: rgba(255, 255, 255, 0.03);
+
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 32px;
 
     padding: 40px;
 
-    min-height: 300px;
+    height: 320px;
 
     display: flex;
     flex-direction: column;
@@ -71,7 +76,9 @@ const Card = styled.div`
 
     h3 {
         font-size: clamp(22px, 3vw, 30px);
+
         line-height: 1.2;
+
         margin-bottom: 20px;
 
         text-wrap: balance;
@@ -79,25 +86,46 @@ const Card = styled.div`
 
     p {
         color: #9a9a9a;
+
         line-height: 1.8;
+
         max-width: 500px;
+
+        display: -webkit-box;
+
+        -webkit-line-clamp: 3;
+
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
     }
+
 
     @media (max-width: 768px) {
-        padding: 32px;
+
+        height: auto;
+
         min-height: 260px;
+
+        padding: 32px;
     }
 
+
     @media (max-width: 480px) {
+
         padding: 28px 24px;
+
         min-height: auto;
+
 
         h3 {
             font-size: 24px;
         }
 
+
         p {
             font-size: 15px;
+
             line-height: 1.7;
         }
     }
