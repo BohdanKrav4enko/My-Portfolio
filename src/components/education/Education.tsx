@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import * as S from "./styles/EducationStyle";
+import { useTranslation } from "react-i18next";
 
 import {
     FaGraduationCap,
@@ -8,6 +9,9 @@ import {
 } from "react-icons/fa";
 
 export const Education = () => {
+
+    const { t } = useTranslation();
+
     return (
         <motion.div
             initial={{
@@ -30,11 +34,12 @@ export const Education = () => {
             <S.Section id="education">
 
                 <S.Title>
-                    Academic <span>Background.</span>
+                    {t("education.titleFirst")}{" "}
+                    <span>{t("education.titleSecond")}</span>
                 </S.Title>
 
                 <S.Subtitle>
-                    My educational foundation in software engineering and development principles.
+                    {t("education.subtitle")}
                 </S.Subtitle>
 
                 <S.Card>
@@ -46,11 +51,11 @@ export const Education = () => {
                     <S.Content>
 
                         <S.Degree>
-                            Bachelor of Software Engineering
+                            {t("education.degree")}
                         </S.Degree>
 
                         <S.University>
-                            Admiral Makarov National University of Shipbuilding
+                            {t("education.university")}
                         </S.University>
 
                         <S.Period>
@@ -58,20 +63,18 @@ export const Education = () => {
                         </S.Period>
 
                         <S.Description>
-                            Built a strong foundation in software architecture,
-                            algorithms, databases and object-oriented programming,
-                            forming the basis for modern frontend development.
+                            {t("education.description")}
                         </S.Description>
 
                         <S.Tags>
                             <S.Tag>
                                 <FaCode/>
-                                Programming
+                                {t("education.tags.programming")}
                             </S.Tag>
 
                             <S.Tag>
                                 <FaUniversity/>
-                                Higher Education
+                                {t("education.tags.higherEducation")}
                             </S.Tag>
                         </S.Tags>
 

@@ -1,7 +1,12 @@
 import {useEffect, useState} from "react";
 import * as S from "./styles/NavBarStyle";
+import {LanguageSwitcher} from "../languageSwitcher";
+import {useTranslation} from "react-i18next";
 
 export const Navbar = () => {
+
+    const { t } = useTranslation();
+
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState("home");
 
@@ -9,6 +14,16 @@ export const Navbar = () => {
         setActiveLink(link);
         setIsOpen(false);
     };
+
+    const links = [
+        {id: "home", label: t("nav.home")},
+        {id: "technology", label: t("nav.technology")},
+        {id: "services", label: t("nav.services")},
+        {id: "projects", label: t("nav.projects")},
+        {id: "about", label: t("nav.about")},
+        {id: "education", label: t("nav.education")},
+        {id: "contact", label: t("nav.contact")},
+    ];
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
@@ -42,76 +57,32 @@ export const Navbar = () => {
                 </S.Logo>
 
                 <S.Menu>
-                    <a
-                        href="#home"
-                        className={activeLink === "home" ? "active" : ""}
-                        onClick={() => handleClick("home")}
-                    >
-                        Home
-                    </a>
-
-                    <a
-                        href="#technology"
-                        className={activeLink === "technology" ? "active" : ""}
-                        onClick={() => handleClick("technology")}
-                    >
-                        Technology
-                    </a>
-
-                    <a
-                        href="#services"
-                        className={activeLink === "services" ? "active" : ""}
-                        onClick={() => handleClick("services")}
-                    >
-                        Services
-                    </a>
-
-                    <a
-                        href="#projects"
-                        className={activeLink === "projects" ? "active" : ""}
-                        onClick={() => handleClick("projects")}
-                    >
-                        Projects
-                    </a>
-
-                    <a
-                        href="#about"
-                        className={activeLink === "about" ? "active" : ""}
-                        onClick={() => handleClick("about")}
-                    >
-                        About
-                    </a>
-
-                    <a
-                        href="#education"
-                        className={activeLink === "education" ? "active" : ""}
-                        onClick={() => handleClick("education")}
-                    >
-                        Education
-                    </a>
-
-                    <a
-                        href="#contact"
-                        className={activeLink === "contact" ? "active" : ""}
-                        onClick={() => handleClick("contact")}
-                    >
-                        Contact
-                    </a>
+                    {links.map((link)=>(
+                        <a
+                            key={link.id}
+                            href={`#${link.id}`}
+                            className={activeLink === link.id ? "active" : ""}
+                            onClick={() => handleClick(link.id)}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                 </S.Menu>
+                <S.Actions>
+                    <LanguageSwitcher />
+                    <S.ContactButton href="mailto:bohdan.krav4enko@gmail.com">
+                        {t("nav.contactButton")}
+                    </S.ContactButton>
+                    <S.BurgerButton
+                        onClick={() => setIsOpen(!isOpen)}
+                        $open={isOpen}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </S.BurgerButton>
 
-                <S.ContactButton href="mailto:bohdan.krav4enko@gmail.com">
-                    Contact Me
-                </S.ContactButton>
-
-                <S.BurgerButton
-                    onClick={() => setIsOpen(!isOpen)}
-                    $open={isOpen}
-                >
-                    <span />
-                    <span />
-                    <span />
-                </S.BurgerButton>
-
+                </S.Actions>
             </S.Container>
 
             <S.Overlay
@@ -120,36 +91,18 @@ export const Navbar = () => {
             />
 
             <S.MobileMenu $open={isOpen}>
-                <a href="#home" onClick={() => handleClick("home")}>
-                    Home
-                </a>
-
-                <a href="#technology" onClick={() => handleClick("technology")}>
-                    Technology
-                </a>
-
-                <a href="#services" onClick={() => handleClick("services")}>
-                    Services
-                </a>
-
-                <a href="#projects" onClick={() => handleClick("projects")}>
-                    Projects
-                </a>
-
-                <a href="#about" onClick={() => handleClick("about")}>
-                    About
-                </a>
-
-                <a href="#education" onClick={() => handleClick("education")}>
-                    Education
-                </a>
-
-                <a href="#contact" onClick={() => handleClick("contact")}>
-                    Contact
-                </a>
+                {links.map((link)=>(
+                    <a
+                        key={link.id}
+                        href={`#${link.id}`}
+                        onClick={() => handleClick(link.id)}
+                    >
+                        {link.label}
+                    </a>
+                ))}
 
                 <button onClick={() => setIsOpen(false)}>
-                    Contact Me
+                    {t("nav.contactButton")}
                 </button>
             </S.MobileMenu>
 

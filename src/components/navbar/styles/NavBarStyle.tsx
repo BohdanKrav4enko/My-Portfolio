@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
         top: 16px;
     }
 `;
-
 export const Container = styled.div`
     width: min(1200px, calc(100% - 32px));
     z-index: 1000;
@@ -40,13 +39,12 @@ export const Container = styled.div`
     box-shadow:
             0 8px 40px rgba(0, 0, 0, 0.35);
 
-    @media (max-width: 768px) {
+    @media (max-width: 1250px) {
         height: 64px;
         padding: 0 18px;
         width: calc(100% - 24px);
     }
 `;
-
 export const Logo = styled.div`
     width: 48px;
     height: 48px;
@@ -74,13 +72,12 @@ export const Logo = styled.div`
 
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1250px) {
         width: 42px;
         height: 42px;
         font-size: 16px;
     }
 `;
-
 export const Menu = styled.nav`
     display: flex;
     align-items: center;
@@ -145,11 +142,17 @@ export const Menu = styled.nav`
     @media (max-width: 830px) {
         gap: 12px;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 1250px) {
         display: none;
     }
 `;
+export const Actions = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    gap: 20px;
+`;
 export const ContactButton = styled.a`
     display: flex;
     align-items: center;
@@ -188,15 +191,13 @@ export const ContactButton = styled.a`
         transform: translateY(0);
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 1250px) {
         display: none;
     }
 `;
-
 interface BurgerProps {
     $open: boolean;
 }
-
 export const BurgerButton = styled.button<BurgerProps>`
     display: none;
 
@@ -245,7 +246,7 @@ export const BurgerButton = styled.button<BurgerProps>`
     $open ? "rotate(-45deg)" : "rotate(0deg)"};
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 1250px) {
         display: block;
     }
 `;
@@ -302,7 +303,7 @@ export const MobileMenu = styled.div<BurgerProps>`
         cursor: pointer;
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: 1250px) {
         display: none;
     }
 `;
@@ -323,7 +324,7 @@ export const Overlay = styled.div<BurgerProps>`
 
     z-index: 998;
 
-    @media (min-width: 769px) {
+    @media (min-width: 1250px) {
         display: none;
     }
 `;

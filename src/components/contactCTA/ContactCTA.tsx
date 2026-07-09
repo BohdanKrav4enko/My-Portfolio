@@ -1,7 +1,11 @@
 import {motion} from "framer-motion";
 import * as S from "./styles/ContactCTAStyles.tsx";
+import { useTranslation } from "react-i18next";
 
 export const ContactCTA = () => {
+
+    const { t } = useTranslation();
+
     return (
         <motion.div
             initial={{
@@ -26,12 +30,11 @@ export const ContactCTA = () => {
                 <S.Card>
 
                     <S.Title>
-                        Have an Idea? Let's Build It Together.
+                        {t("contact.title")}
                     </S.Title>
 
                     <S.Text>
-                        Open to frontend opportunities, freelance projects
-                        and collaborations worldwide.
+                        {t("contact.description")}
                     </S.Text>
                     <S.Text>
                         <S.Phone href="tel:+380660827985">
@@ -46,11 +49,11 @@ export const ContactCTA = () => {
                     </S.Text>
 
                     <S.Button href="mailto:bohdan.krav4enko@gmail.com">
-                        Contact Me
+                        {t("contact.button")}
                     </S.Button>
 
                     <S.ResponseTime>
-                        Usually reply within 24 hours.
+                        {t("contact.responseTime")}
                     </S.ResponseTime>
 
                 </S.Card>

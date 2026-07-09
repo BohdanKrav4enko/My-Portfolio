@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "technology": "Technologien",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "about": "Über mich",
+    "education": "Ausbildung",
+    "contact": "Kontakt",
+    "contactButton": "Kontakt"
+  },
+  "hero": {
+    "badge": "🟢 Verfügbar für neue Projekte",
+    "titleFirst": "Frontend",
+    "titleSecond": "Developer",
+    "description": "Frontend-Entwickler mit Fokus auf moderne, responsive und leistungsstarke Webanwendungen mit React und TypeScript.",
+    "contact": "Kontakt →",
+    "download": "CV laden ↓"
+  },
+  "technology": {
+    "title": "Technologische Grundlage",
+    "subtitle": "Moderne Technologien, die ich nutze, um digitale Produkte zum Leben zu erwecken."
+  },
+  "services": {
+    "title": "Mehr als nur Programmierung",
+    "subtitle": "Entwicklung skalierbarer Anwendungen mit Fokus auf Architektur, Benutzererfahrung und Performance.",
+    "cards": {
+      "frontend": {
+        "title": "Frontend-Entwicklung",
+        "description": "Erstellung moderner Webanwendungen mit React, TypeScript und skalierbarer Komponentenarchitektur."
+      },
+      "ui": {
+        "title": "UI-Umsetzung",
+        "description": "Umsetzung von Figma-Designs in responsive und pixelgenaue Benutzeroberflächen."
+      },
+      "api": {
+        "title": "State & APIs",
+        "description": "Redux Toolkit, RTK Query, Axios und Integration von REST APIs."
+      },
+      "performance": {
+        "title": "Optimierung & Skalierbarkeit",
+        "description": "Verbesserung von Rendering-Performance, Architektur und Skalierbarkeit von Anwendungen."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Ausgewählte Arbeiten",
+    "titleFirst": "Ausgewählte",
+    "titleSecond": "Projekte.",
+    "subtitle": "Eine Auswahl meiner Projekte, die meine Frontend-Fähigkeiten zeigen.",
+    "viewAll": "Alle Projekte ansehen →",
+
+    "items": {
+      "kinoPotok": {
+        "description": "Film-Streaming-Plattform mit Suche, Kategorien, Bewertungen und detaillierten Filminformationen."
+      },
+      "shop": {
+        "description": "Moderne E-Commerce-Anwendung mit Produktfiltern, Warenkorbverwaltung, intuitiver Benutzeroberfläche und responsivem Design."
+      },
+      "portfolio": {
+        "description": "Persönliches Portfolio mit flüssigen Animationen, modernen UI-Mustern und responsiven Layouts."
+      }
+    },
+
+    "github": "GitHub",
+    "liveDemo": "Live Demo"
+  },
+  "about": {
+    "titleFirst": "Über",
+    "titleSecond": "mich.",
+    "subtitle": "Frontend-Entwickler mit Fokus auf moderne Webanwendungen mit React und TypeScript.",
+    "cards": {
+      "cleanCode": {
+        "title": "Sauberer & skalierbarer Code",
+        "description": "Entwicklung wartbarer und skalierbarer Anwendungen mit modernen Frontend-Praktiken."
+      },
+      "modernStack": {
+        "title": "Moderner Frontend-Stack",
+        "description": "React, TypeScript, Redux Toolkit und Next.js."
+      },
+      "responsive": {
+        "title": "Responsive Oberflächen",
+        "description": "Erstellung responsiver Benutzeroberflächen für jede Bildschirmgröße."
+      },
+      "growth": {
+        "title": "Wachstumsorientierung",
+        "description": "Ständige Verbesserung der Fähigkeiten und Erkundung neuer Technologien."
+      }
+    }
+  },
+  "education": {
+    "titleFirst": "Akademischer",
+    "titleSecond": "Hintergrund.",
+    "subtitle": "Meine akademische Grundlage in Software Engineering und modernen Entwicklungsprinzipien.",
+
+    "degree": "Bachelor in Software Engineering",
+
+    "university": "Admiral Makarov Nationale Universität für Schiffbau",
+
+    "description": "Aufbau einer soliden Grundlage in Softwarearchitektur, Algorithmen, Datenbanken und objektorientierter Programmierung als Basis für moderne Frontend-Entwicklung.",
+
+    "tags": {
+      "programming": "Programmierung",
+      "higherEducation": "Hochschulbildung"
+    }
+  },
+  "contact": {
+    "title": "Eine Idee? Lass sie uns gemeinsam umsetzen.",
+    "description": "Offen für Frontend-Möglichkeiten, Freelance-Projekte und internationale Zusammenarbeit.",
+    "button": "Kontakt aufnehmen",
+    "responseTime": "Antwort normalerweise innerhalb von 24 Stunden."
+  },
+  "footer": {
+    "description": "Frontend-Entwickler mit Fokus auf die Entwicklung moderner Webanwendungen mit React und TypeScript.",
+    "copyright": "© 2026 Bohdan Kravchenko • Entwickelt und gestaltet mit React, TypeScript und Styled Components."
+  }
+}

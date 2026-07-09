@@ -1,5 +1,5 @@
 import * as S from "./styles/FooterStyle";
-
+import { useTranslation } from "react-i18next";
 import {
     FaGithub,
     FaTelegramPlane,
@@ -8,6 +8,9 @@ import {
 } from "react-icons/fa";
 
 export const Footer = () => {
+
+    const { t } = useTranslation();
+
     return (
         <S.Footer>
 
@@ -20,9 +23,7 @@ export const Footer = () => {
                     </S.Logo>
 
                     <S.Description>
-                        Frontend Developer focused on building
-                        modern web applications with React
-                        and TypeScript.
+                        {t("footer.description")}
                     </S.Description>
 
                 </S.Left>
@@ -41,7 +42,7 @@ export const Footer = () => {
                         <FaTelegramPlane />
                     </S.Social>
 
-                    <S.Social href="mailto:bohdan.krav4enko@email.com">
+                    <S.Social href="mailto:bohdan.krav4enko@gmail.com">
                         <FaEnvelope />
                     </S.Social>
 
@@ -50,7 +51,7 @@ export const Footer = () => {
             </S.Container>
 
             <S.Bottom>
-                © 2026 Bogdan Kravchenko • Built with React, Next.js and Node.js.
+                {t("footer.copyright")}
             </S.Bottom>
 
         </S.Footer>

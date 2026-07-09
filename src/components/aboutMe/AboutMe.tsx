@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import * as S from "./styles/AboutMeStyle";
-
+import {useTranslation} from "react-i18next";
 import {
     FaReact,
     FaCode,
@@ -8,7 +8,11 @@ import {
     FaLaptopCode
 } from "react-icons/fa";
 
+
 export const AboutMe = () => {
+
+    const { t } = useTranslation();
+
     return (
         <motion.div
             initial={{
@@ -31,12 +35,11 @@ export const AboutMe = () => {
             <S.Section id="about">
 
                 <S.Title>
-                    About <span>Me.</span>
+                    {t("about.titleFirst")} <span>{t("about.titleSecond")}</span>
                 </S.Title>
 
                 <S.Subtitle>
-                    Frontend developer focused on building modern web
-                    applications with React and TypeScript.
+                    {t("about.subtitle")}
                 </S.Subtitle>
 
                 <S.Grid>
@@ -44,40 +47,40 @@ export const AboutMe = () => {
                     <S.Card>
                         <FaCode/>
 
-                        <h3>Clean & Scalable Code</h3>
+                        <h3>{t("about.cards.cleanCode.title")}</h3>
 
                         <p>
-                            Building maintainable and scalable applications using modern frontend practices.
+                            {t("about.cards.cleanCode.description")}
                         </p>
                     </S.Card>
 
                     <S.Card>
                         <FaReact/>
 
-                        <h3>Modern Frontend Stack</h3>
+                        <h3>{t("about.cards.modernStack.title")}</h3>
 
                         <p>
-                            React, TypeScript, Redux Toolkit and Next.js.
+                            {t("about.cards.modernStack.description")}
                         </p>
                     </S.Card>
 
                     <S.Card>
                         <FaLaptopCode/>
 
-                        <h3>Responsive Interfaces</h3>
+                        <h3>{t("about.cards.responsive.title")}</h3>
 
                         <p>
-                            Creating responsive interfaces optimized for every screen size.
+                            {t("about.cards.responsive.description")}
                         </p>
                     </S.Card>
 
                     <S.Card>
                         <FaRocket/>
 
-                        <h3>Growth Mindset</h3>
+                        <h3>{t("about.cards.growth.title")}</h3>
 
                         <p>
-                            Constantly improving skills and exploring new technologies.
+                            {t("about.cards.growth.description")}
                         </p>
                     </S.Card>
 

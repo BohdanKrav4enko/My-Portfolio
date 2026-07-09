@@ -3,7 +3,7 @@ import * as S from "./styles/ProjectsStyle";
 import prev1 from "../../assets/kinoPotok Preview.webp";
 import prev2 from "../../assets/shop Preview.webp";
 import prev3 from "../../assets/portfolio Preview.webp";
-
+import {useTranslation} from "react-i18next";
 
 import {FaExternalLinkAlt, FaGithub, FaStar} from "react-icons/fa";
 import {getTechColor} from "../../utils/getTechColor.ts";
@@ -35,8 +35,7 @@ const cardVariants = {
 const projects = [
     {
         title: "KinoPotok",
-        description:
-            "Movie streaming platform with search, categories, ratings and detailed information about films.",
+        description: "kinoPotok",
         image: prev1,
         stack: ["React", "TypeScript", "Redux Toolkit"],
         link: "https://kinopotok.vercel.app/",
@@ -44,8 +43,7 @@ const projects = [
     },
     {
         title: "Online store",
-        description:
-            "E-commerce application featuring product filtering, shopping cart management and responsive UI.",
+        description: "shop",
         image: prev2,
         stack: ["React", "TypeScript", "Redux Toolkit"],
         link: "https://shop-drab-delta.vercel.app/",
@@ -53,8 +51,7 @@ const projects = [
     },
     {
         title: "Portfolio",
-        description:
-            "Personal portfolio featuring smooth animations, modern UI patterns and responsive layouts.",
+        description: "portfolio",
         image: prev3,
         stack: ["React", "Styled Components", "Vite"],
         link: "https://bohdankrav4enko.github.io/Portfolio/",
@@ -63,6 +60,9 @@ const projects = [
 ];
 
 export const Projects = () => {
+
+    const {t} = useTranslation();
+
     return (
         <motion.div
             variants={containerVariants}
@@ -78,22 +78,22 @@ export const Projects = () => {
 
                 <S.Badge>
                     <FaStar/>
-                    Selected Works
+                    {t("projects.badge")}
                 </S.Badge>
 
                 <S.Header>
                     <div>
                         <S.Title>
-                            Featured <span>Projects.</span>
+                            {t("projects.titleFirst")} <span>{t("projects.titleSecond")}</span>
                         </S.Title>
 
                         <S.Subtitle>
-                            A selection of projects showcasing my frontend expertise.
+                            {t("projects.subtitle")}
                         </S.Subtitle>
                     </div>
 
                     <S.ViewAll target="_blank" href={"https://github.com/BohdanKrav4enko?tab=repositories"}>
-                        View All Projects →
+                        {t("projects.viewAll")}
                     </S.ViewAll>
                 </S.Header>
 
@@ -123,7 +123,7 @@ export const Projects = () => {
                                     </S.ProjectTitle>
 
                                     <S.Description>
-                                        {project.description}
+                                        {t(`projects.items.${project.description}.description`)}
                                     </S.Description>
 
                                     <S.Tags>
@@ -143,7 +143,7 @@ export const Projects = () => {
                                             href={project.git}
                                         >
                                             <FaGithub />
-                                            GitHub
+                                            {t("projects.github")}
                                         </S.Link>
 
                                         <S.Link
@@ -151,7 +151,7 @@ export const Projects = () => {
                                             href={project.link}
                                         >
                                             <FaExternalLinkAlt />
-                                            Live Demo
+                                            {t("projects.liveDemo")}
                                         </S.Link>
                                     </S.Links>
 

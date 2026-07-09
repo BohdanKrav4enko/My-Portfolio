@@ -3,6 +3,8 @@ import {TbApi} from "react-icons/tb";
 import {MdPhoneIphone} from "react-icons/md";
 import {FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaReact,} from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import {
     SiAxios,
     SiJavascript,
@@ -60,6 +62,9 @@ const technologies = [
 ];
 
 export const TechStack = () => {
+
+    const { t } = useTranslation();
+
     return (
         <motion.div
             initial={{
@@ -82,11 +87,11 @@ export const TechStack = () => {
             <S.Section id="technology">
 
                 <S.Title>
-                    Technological Foundation
+                    {t("technology.title")}
                 </S.Title>
 
                 <S.Subtitle>
-                    The modern tools I use to bring products to life.
+                    {t("technology.subtitle")}
                 </S.Subtitle>
 
                 <S.Grid>

@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import * as S from "./styles/ServicesStyle";
+import {useTranslation} from "react-i18next";
 
 import {
     FaReact,
@@ -9,6 +10,9 @@ import {
 } from "react-icons/fa";
 
 export const Services = () => {
+
+    const {t} = useTranslation();
+
     return (
         <motion.div
             initial={{
@@ -29,11 +33,12 @@ export const Services = () => {
             }}
         >
             <S.Section id="services">
-                <S.Title>Beyond Just Coding</S.Title>
+                <S.Title>
+                    {t("services.title")}
+                </S.Title>
 
                 <S.Subtitle>
-                    Building scalable applications with attention to
-                    architecture, user experience and performance.
+                    {t("services.subtitle")}
                 </S.Subtitle>
 
                 <S.TopRow>
@@ -43,11 +48,12 @@ export const Services = () => {
                             <FaReact/>
                         </S.IconWrapper>
 
-                        <h3>Frontend Development</h3>
+                        <h3>
+                            {t("services.cards.frontend.title")}
+                        </h3>
 
                         <p>
-                            Building modern web applications using React,
-                            TypeScript and scalable component architecture.
+                            {t("services.cards.frontend.description")}
                         </p>
                     </S.FrontendCard>
 
@@ -56,11 +62,12 @@ export const Services = () => {
                             <FaPalette/>
                         </S.IconWrapper>
 
-                        <h3>UI Implementation</h3>
+                        <h3>
+                            {t("services.cards.ui.title")}
+                        </h3>
 
                         <p>
-                            Turning Figma designs into responsive and
-                            pixel-perfect interfaces.
+                            {t("services.cards.ui.description")}
                         </p>
                     </S.UiCard>
 
@@ -73,11 +80,12 @@ export const Services = () => {
                             <FaDatabase/>
                         </S.IconWrapper>
 
-                        <h3>State & APIs</h3>
+                        <h3>
+                            {t("services.cards.api.title")}
+                        </h3>
 
                         <p>
-                            Redux Toolkit, RTK Query, Axios and REST API
-                            integration.
+                            {t("services.cards.api.description")}
                         </p>
                     </S.ApiCard>
 
@@ -86,11 +94,12 @@ export const Services = () => {
                             <FaBolt/>
                         </S.IconWrapper>
 
-                        <h3>Optimization & Scalability</h3>
+                        <h3>
+                            {t("services.cards.performance.title")}
+                        </h3>
 
                         <p>
-                            Optimizing rendering performance, architecture
-                            and application scalability.
+                            {t("services.cards.performance.description")}
                         </p>
                     </S.PerformanceCard>
 

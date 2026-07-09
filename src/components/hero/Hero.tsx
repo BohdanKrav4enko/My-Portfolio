@@ -1,38 +1,41 @@
 import * as S from "./styles/HeroStyles.tsx";
 import img from '../../assets/avatar.webp'
 import {ScrollIndicator} from "../scrollIndicator";
+import { useTranslation } from "react-i18next";
 
 
 export const Hero = () => {
+
+    const { t } = useTranslation();
+
     return (<>
             <S.Section id="home">
                 <S.Container>
 
                     <S.Left>
                         <S.Badge>
-                            🟢 Available for new projects
+                            {t("hero.badge")}
                         </S.Badge>
 
                         <S.Title>
-                            Frontend <br/>
-                            <span>Developer</span>
+                            {t("hero.titleFirst")} <br/>
+                            <span>{t("hero.titleSecond")}</span>
                         </S.Title>
 
                         <S.Description>
-                            A Frontend Developer focused on building modern, responsive and performant web applications
-                            using React and TypeScript.
+                            {t("hero.description")}
                         </S.Description>
 
                         <S.Buttons>
                             <S.PrimaryButton href="mailto:bohdan.krav4enko@gmail.com">
-                                Contact Me →
+                                {t("hero.contact")}
                             </S.PrimaryButton>
 
                             <S.SecondaryButton
                                 href="/Bohdan_Kravchenko_CV_en.pdf"
                                 download
                             >
-                                Download CV ↓
+                                {t("hero.download")}
                             </S.SecondaryButton>
                         </S.Buttons>
                     </S.Left>

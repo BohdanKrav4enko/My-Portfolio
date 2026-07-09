@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "home": "Home",
+    "technology": "Technology",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "education": "Education",
+    "contact": "Contact",
+    "contactButton": "Contact"
+  },
+  "hero": {
+    "badge": "🟢 Available for new projects",
+    "titleFirst": "Frontend",
+    "titleSecond": "Developer",
+    "description": "A Frontend Developer focused on building modern, responsive and performant web applications using React and TypeScript.",
+    "contact": "Contact Me →",
+    "download": "Download CV ↓"
+  },
+  "technology": {
+    "title": "Technological Foundation",
+    "subtitle": "The modern tools I use to bring products to life."
+  },
+  "services": {
+    "title": "Beyond Just Coding",
+    "subtitle": "Building scalable applications with attention to architecture, user experience and performance.",
+    "cards": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Building modern web applications using React, TypeScript and scalable component architecture."
+      },
+      "ui": {
+        "title": "UI Implementation",
+        "description": "Turning Figma designs into responsive and pixel-perfect interfaces."
+      },
+      "api": {
+        "title": "State & APIs",
+        "description": "Redux Toolkit, RTK Query, Axios and REST API integration."
+      },
+      "performance": {
+        "title": "Optimization & Scalability",
+        "description": "Optimizing rendering performance, architecture and application scalability."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Selected Works",
+    "titleFirst": "Featured",
+    "titleSecond": "Projects.",
+    "subtitle": "A selection of projects showcasing my frontend expertise.",
+    "viewAll": "View All Projects →",
+
+    "items": {
+      "kinoPotok": {
+        "description": "Movie streaming platform with search, categories, ratings and detailed information about films."
+      },
+      "shop": {
+        "description": "E-commerce application featuring product filtering, shopping cart management and responsive UI."
+      },
+      "portfolio": {
+        "description": "Personal portfolio featuring smooth animations, modern UI patterns and responsive layouts."
+      }
+    },
+
+    "github": "GitHub",
+    "liveDemo": "Live Demo"
+  },
+  "about": {
+    "titleFirst": "About",
+    "titleSecond": "Me.",
+    "subtitle": "Frontend developer focused on building modern web applications with React and TypeScript.",
+    "cards": {
+      "cleanCode": {
+        "title": "Clean & Scalable Code",
+        "description": "Building maintainable and scalable applications using modern frontend practices."
+      },
+      "modernStack": {
+        "title": "Modern Frontend Stack",
+        "description": "React, TypeScript, Redux Toolkit and Next.js."
+      },
+      "responsive": {
+        "title": "Responsive Interfaces",
+        "description": "Creating responsive interfaces optimized for every screen size."
+      },
+      "growth": {
+        "title": "Growth Mindset",
+        "description": "Constantly improving skills and exploring new technologies."
+      }
+    }
+  },
+  "education": {
+    "titleFirst": "Academic",
+    "titleSecond": "Background.",
+    "subtitle": "My educational foundation in software engineering and development principles.",
+
+    "degree": "Bachelor of Software Engineering",
+
+    "university": "Admiral Makarov National University of Shipbuilding",
+
+    "description": "Built a strong foundation in software architecture, algorithms, databases and object-oriented programming, forming the basis for modern frontend development.",
+
+    "tags": {
+      "programming": "Programming",
+      "higherEducation": "Higher Education"
+    }
+  },
+  "contact": {
+    "title": "Have an Idea? Let's Build It Together.",
+    "description": "Open to frontend opportunities, freelance projects and collaborations worldwide.",
+    "button": "Contact Me",
+    "responseTime": "Usually reply within 24 hours."
+  },
+  "footer": {
+    "description": "Frontend Developer focused on building modern web applications with React and TypeScript.",
+    "copyright": "© 2026 Bohdan Kravchenko • Designed and developed with React, TypeScript and Styled Components."
+  }
+}
