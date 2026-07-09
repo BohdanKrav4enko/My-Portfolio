@@ -87,7 +87,7 @@ export const Title = styled.h2`
         line-height: 1.2;
     }
     @media (max-width: 480px) {
-        font-size: 48px;
+        font-size: 32px;
     }
 `;
 export const Text = styled.p`
