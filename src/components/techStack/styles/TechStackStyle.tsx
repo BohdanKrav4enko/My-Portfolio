@@ -68,7 +68,6 @@ export const Card = styled.div`
 
     transition: .3s;
 
-    cursor: pointer;
 
     &:hover {
         transform: translateY(-5px);
