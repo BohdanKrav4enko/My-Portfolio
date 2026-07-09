@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-
 import * as S from "./style/ScrollToTopStyle.tsx";
 
 export const ScrollToTop = () => {

@@ -1,7 +1,9 @@
 import * as S from "./styles/HeroStyles.tsx";
 import img from '../../assets/avatar.webp'
 import {ScrollIndicator} from "../scrollIndicator";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
+import {CV_URL_EN} from "../../constants/contacts.ts";
+import {scrollToSection} from "../../utils/scrollToSection.ts";
 
 
 export const Hero = () => {
@@ -27,12 +29,12 @@ export const Hero = () => {
                         </S.Description>
 
                         <S.Buttons>
-                            <S.PrimaryButton href="mailto:bohdan.krav4enko@gmail.com">
+                            <S.PrimaryButton onClick={() => scrollToSection("contact")}>
                                 {t("hero.contact")}
                             </S.PrimaryButton>
 
                             <S.SecondaryButton
-                                href="/Bohdan_Kravchenko_CV_en.pdf"
+                                href={CV_URL_EN}
                                 download
                             >
                                 {t("hero.download")}

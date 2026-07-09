@@ -1,37 +1,14 @@
-import {motion} from "framer-motion";
 import * as S from "./styles/ServicesStyle";
 import {useTranslation} from "react-i18next";
-
-import {
-    FaReact,
-    FaPalette,
-    FaDatabase,
-    FaBolt,
-} from "react-icons/fa";
+import {AnimatedSection} from "../animatedSection";
+import {FaBolt, FaDatabase, FaPalette, FaReact,} from "react-icons/fa";
 
 export const Services = () => {
 
     const {t} = useTranslation();
 
     return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: 30,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
-            transition={{
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-            }}
-            viewport={{
-                once: true,
-                amount: 0.15,
-            }}
-        >
+        <AnimatedSection>
             <S.Section id="services">
                 <S.Title>
                     {t("services.title")}
@@ -105,6 +82,6 @@ export const Services = () => {
 
                 </S.BottomRow>
             </S.Section>
-        </motion.div>
+        </AnimatedSection>
     );
 };

@@ -14,8 +14,21 @@ export const Section = styled.section`
     display: flex;
     align-items: center;
     background:
-            radial-gradient(circle at top left,#00d4ff20,transparent 40%),
-            radial-gradient(circle at bottom right,#7c5cff20,transparent 40%);
+            radial-gradient(
+                    900px circle at top left,
+                    rgba(59,130,246,.16),
+                    transparent 70%
+            ),
+            radial-gradient(
+                    900px circle at bottom right,
+                    rgba(124,92,255,.16),
+                    transparent 70%
+            ),
+            radial-gradient(
+                    600px circle at center,
+                    rgba(255,255,255,.03),
+                    transparent 80%
+            );
     padding: 120px 40px;
 
     @media (max-width: 768px) {

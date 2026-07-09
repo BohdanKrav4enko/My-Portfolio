@@ -1,78 +1,48 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import {useTranslation} from "react-i18next";
 import * as S from "./styles/NavBarStyle";
 import {LanguageSwitcher} from "../languageSwitcher";
-import {useTranslation} from "react-i18next";
+import {DesktopMenu} from "./navbarItems/DesktopMenu.tsx";
+import {getNavbarLinks} from "./navbarItems/navbarLinks.ts";
+import {useActiveSection} from "../../hooks/useActiveSection.ts";
+import {MobileMenu} from "./navbarItems/MobileMenu.tsx";
+import {scrollToSection} from "../../utils/scrollToSection.ts";
 
 export const Navbar = () => {
-
     const { t } = useTranslation();
 
     const [isOpen, setIsOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("home");
 
-    const handleClick = (link: string) => {
-        setActiveLink(link);
+    const { activeLink, setActiveLink } = useActiveSection();
+
+    const links = getNavbarLinks(t);
+
+    const handleClick = (id: string) => {
+        setActiveLink(id);
         setIsOpen(false);
+        scrollToSection(id);
     };
-
-    const links = [
-        {id: "home", label: t("nav.home")},
-        {id: "technology", label: t("nav.technology")},
-        {id: "services", label: t("nav.services")},
-        {id: "projects", label: t("nav.projects")},
-        {id: "about", label: t("nav.about")},
-        {id: "education", label: t("nav.education")},
-        {id: "contact", label: t("nav.contact")},
-    ];
-
-    useEffect(() => {
-        const sections = document.querySelectorAll("section");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveLink(entry.target.id);
-                    }
-                });
-            },
-            {
-                threshold: 0.5,
-            }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
 
     return (
         <S.Wrapper>
             <S.Container>
-
-                <S.Logo>
-                    BK
-                </S.Logo>
+                <S.Logo>BK</S.Logo>
 
                 <S.Menu>
-                    {links.map((link)=>(
-                        <a
-                            key={link.id}
-                            href={`#${link.id}`}
-                            className={activeLink === link.id ? "active" : ""}
-                            onClick={() => handleClick(link.id)}
-                        >
-                            {link.label}
-                        </a>
-                    ))}
+                    <DesktopMenu
+                        links={links}
+                        activeLink={activeLink}
+                        onClick={handleClick}
+                    />
                 </S.Menu>
+
                 <S.Actions>
                     <LanguageSwitcher />
-                    <S.ContactButton href="mailto:bohdan.krav4enko@gmail.com">
+
+                    <S.ContactButton onClick={() => scrollToSection("contact")}>
                         {t("nav.contactButton")}
                     </S.ContactButton>
+
                     <S.BurgerButton
                         onClick={() => setIsOpen(!isOpen)}
                         $open={isOpen}
@@ -81,7 +51,6 @@ export const Navbar = () => {
                         <span />
                         <span />
                     </S.BurgerButton>
-
                 </S.Actions>
             </S.Container>
 
@@ -91,21 +60,18 @@ export const Navbar = () => {
             />
 
             <S.MobileMenu $open={isOpen}>
-                {links.map((link)=>(
-                    <a
-                        key={link.id}
-                        href={`#${link.id}`}
-                        onClick={() => handleClick(link.id)}
-                    >
-                        {link.label}
-                    </a>
-                ))}
+                <MobileMenu
+                    links={links}
+                    onClick={handleClick}
+                />
 
-                <button onClick={() => setIsOpen(false)}>
+                <button onClick={() => {
+                    setIsOpen(false)
+                    scrollToSection("contact")
+                }}>
                     {t("nav.contactButton")}
                 </button>
             </S.MobileMenu>
-
         </S.Wrapper>
     );
 };

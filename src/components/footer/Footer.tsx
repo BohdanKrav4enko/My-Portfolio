@@ -1,11 +1,6 @@
 import * as S from "./styles/FooterStyle";
-import { useTranslation } from "react-i18next";
-import {
-    FaGithub,
-    FaTelegramPlane,
-    FaLinkedinIn,
-    FaEnvelope
-} from "react-icons/fa";
+import {useTranslation} from "react-i18next";
+import {footerSocials} from "./footerItems/footerSocials.ts";
 
 export const Footer = () => {
 
@@ -29,23 +24,19 @@ export const Footer = () => {
                 </S.Left>
 
                 <S.Right>
+                    {footerSocials.map((social) => {
+                        const Icon = social.icon;
 
-                    <S.Social target="_blank" href="https://github.com/BohdanKrav4enko">
-                        <FaGithub />
-                    </S.Social>
-
-                    <S.Social target="_blank" href="https://www.linkedin.com/in/bohdankrav4enko/">
-                        <FaLinkedinIn />
-                    </S.Social>
-
-                    <S.Social target="_blank" href="https://t.me/bohdan_krav4enko">
-                        <FaTelegramPlane />
-                    </S.Social>
-
-                    <S.Social href="mailto:bohdan.krav4enko@gmail.com">
-                        <FaEnvelope />
-                    </S.Social>
-
+                        return (
+                            <S.Social
+                                key={social.href}
+                                href={social.href}
+                                target={social.target}
+                            >
+                                <Icon />
+                            </S.Social>
+                        );
+                    })}
                 </S.Right>
 
             </S.Container>

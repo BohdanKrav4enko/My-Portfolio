@@ -123,7 +123,11 @@ export const Description = styled.p`
 export const Tags = styled.div`
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
+    @media (max-width: 640px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const Tag = styled.div`
@@ -141,5 +145,15 @@ export const Tag = styled.div`
 
     svg {
         color: #7c5cff;
+    }
+    @media (max-width: 800px) {
+    
+        min-width: calc(50% - 8px);
+    }
+
+    @media (max-width: 480px) {
+        min-width: 100%;
+        padding: 12px 20px;
+       
     }
 `;

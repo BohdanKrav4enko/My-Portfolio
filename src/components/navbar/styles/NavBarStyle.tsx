@@ -84,6 +84,7 @@ export const Menu = styled.nav`
     gap: 20px;
 
     a {
+        cursor: pointer;
         color: #9f9f9f;
 
         text-decoration: none;
@@ -284,6 +285,7 @@ export const MobileMenu = styled.div<BurgerProps>`
     gap: 24px;
 
     a {
+        cursor: pointer;
         color: white;
         text-decoration: none;
         font-size: 18px;

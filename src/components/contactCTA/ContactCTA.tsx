@@ -1,32 +1,15 @@
-import {motion} from "framer-motion";
 import * as S from "./styles/ContactCTAStyles.tsx";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
+import {AnimatedSection} from "../animatedSection";
+import {EMAIL, PHONE, PHONE_FORMATTED} from "../../constants/contacts.ts";
 
 export const ContactCTA = () => {
 
     const { t } = useTranslation();
 
     return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: 30,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
-            transition={{
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-            }}
-            viewport={{
-                once: true,
-                amount: 0.15,
-            }}
-        >
+        <AnimatedSection>
             <S.Section id="contact">
-
                 <S.Card>
 
                     <S.Title>
@@ -37,18 +20,18 @@ export const ContactCTA = () => {
                         {t("contact.description")}
                     </S.Text>
                     <S.Text>
-                        <S.Phone href="tel:+380660827985">
-                            +380 (66) 082-79-85
+                        <S.Phone href={`tel:${PHONE}`}>
+                            {PHONE_FORMATTED}
                         </S.Phone>
                     </S.Text>
 
                     <S.Text>
-                        <S.Email href="mailto:bohdan.krav4enko@gmail.com">
-                            bohdan.krav4enko@gmail.com
+                        <S.Email href={`mailto:${EMAIL}`}>
+                            {EMAIL}
                         </S.Email>
                     </S.Text>
 
-                    <S.Button href="mailto:bohdan.krav4enko@gmail.com">
+                    <S.Button href={`mailto:${EMAIL}`}>
                         {t("contact.button")}
                     </S.Button>
 
@@ -57,8 +40,7 @@ export const ContactCTA = () => {
                     </S.ResponseTime>
 
                 </S.Card>
-
             </S.Section>
-        </motion.div>
+        </AnimatedSection>
     );
 };

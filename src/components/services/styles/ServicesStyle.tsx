@@ -4,6 +4,7 @@ export const Section = styled.section`
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
+    
 `;
 
 export const Title = styled.h2`

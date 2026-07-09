@@ -1,36 +1,15 @@
-import { motion } from "framer-motion";
+import {AnimatedSection} from "../animatedSection";
 import * as S from "./styles/EducationStyle";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
+import {FaCode, FaGraduationCap, FaUniversity} from "react-icons/fa";
 
-import {
-    FaGraduationCap,
-    FaUniversity,
-    FaCode
-} from "react-icons/fa";
 
 export const Education = () => {
 
     const { t } = useTranslation();
 
     return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: 30,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
-            transition={{
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-            }}
-            viewport={{
-                once: true,
-                amount: 0.15,
-            }}
-        >
+        <AnimatedSection>
             <S.Section id="education">
 
                 <S.Title>
@@ -83,6 +62,6 @@ export const Education = () => {
                 </S.Card>
 
             </S.Section>
-        </motion.div>
+        </AnimatedSection>
     );
 };
