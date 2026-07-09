@@ -8,8 +8,11 @@ import {
     SiReactrouter,
     SiRedux,
     SiSass,
-    SiStyledcomponents, SiTailwindcss,
-    SiTypescript, SiVite
+    SiStyledcomponents,
+    SiTailwindcss,
+    SiTypescript,
+    SiVite,
+    SiReacthookform
 } from "react-icons/si";
 
 export const technologies = [
@@ -24,6 +27,7 @@ export const technologies = [
     {icon: <SiRedux/>, title: "Redux Toolkit"},
     {icon: <SiRedux/>, title: "RTK Query"},
     {icon: <SiRedux/>, title: "Redux Thunk"},
+    {icon: <SiReacthookform/>, title: "React Hook Form"},
 
     {icon: <SiReactrouter/>, title: "React Router DOM"},
 
@@ -44,6 +48,5 @@ export const technologies = [
     {icon: <FaFigma/>, title: "Figma"},
 
     {icon: <SiVite/>, title: "Vite"},
-
 
 ];

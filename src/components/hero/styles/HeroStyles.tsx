@@ -140,7 +140,7 @@ export const Description = styled.p`
     }
 
     @media (max-width: 480px) {
-        font-size: 16px;
+        font-size: 14px;
     }
 `;
 
