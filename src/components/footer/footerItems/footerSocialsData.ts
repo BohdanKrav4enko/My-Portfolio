@@ -2,7 +2,7 @@ import {FaGithub, FaTelegramPlane, FaLinkedinIn, FaEnvelope} from "react-icons/f
 import {GITHUB_URL, LINKEDIN_URL, TELEGRAM_URL} from "../../../constants/socialLinks";
 import {EMAIL} from "../../../constants/contacts.ts";
 
-export const footerSocials = [
+export const footerSocialsData = [
     {
         icon: FaGithub,
         href: GITHUB_URL,

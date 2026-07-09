@@ -1,10 +1,10 @@
 import * as S from "./styles/FooterStyle";
 import {useTranslation} from "react-i18next";
-import {footerSocials} from "./footerItems/footerSocials.ts";
+import {Socials} from "../Socials.tsx";
 
 export const Footer = () => {
 
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <S.Footer>
@@ -23,21 +23,7 @@ export const Footer = () => {
 
                 </S.Left>
 
-                <S.Right>
-                    {footerSocials.map((social) => {
-                        const Icon = social.icon;
-
-                        return (
-                            <S.Social
-                                key={social.href}
-                                href={social.href}
-                                target={social.target}
-                            >
-                                <Icon />
-                            </S.Social>
-                        );
-                    })}
-                </S.Right>
+                <Socials/>
 
             </S.Container>
 

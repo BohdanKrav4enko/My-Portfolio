@@ -182,3 +182,9 @@ export const ResponseTime = styled.p`
 
     opacity: .8;
 `;
+export const SocialsContainer = styled.div`
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+`

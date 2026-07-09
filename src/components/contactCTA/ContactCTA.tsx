@@ -2,10 +2,11 @@ import * as S from "./styles/ContactCTAStyles.tsx";
 import {useTranslation} from "react-i18next";
 import {AnimatedSection} from "../animatedSection";
 import {EMAIL, PHONE, PHONE_FORMATTED} from "../../constants/contacts.ts";
+import {Socials} from "../Socials.tsx";
 
 export const ContactCTA = () => {
 
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <AnimatedSection>
@@ -38,6 +39,9 @@ export const ContactCTA = () => {
                     <S.ResponseTime>
                         {t("contact.responseTime")}
                     </S.ResponseTime>
+                    <S.SocialsContainer>
+                        <Socials/>
+                    </S.SocialsContainer>
 
                 </S.Card>
             </S.Section>
