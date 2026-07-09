@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+interface TagProps {
+    color: string;
+}
 export const Section = styled.section`
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
-    scroll-margin-top: 120px;
 `;
 
 export const Badge = styled.div`
@@ -223,7 +225,7 @@ export const Tags = styled.div`
     }
 `;
 
-export const Tag = styled.div`
+export const Tag = styled.div<TagProps>`
 
     display: flex;
     align-items: center;
@@ -235,7 +237,7 @@ export const Tag = styled.div`
 
     border-radius: 999px;
 
-    background: rgba(255,255,255,.05);
+    background: ${props => props.color};
 
     font-size: 12px;
 

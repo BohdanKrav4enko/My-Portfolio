@@ -13,17 +13,19 @@ export const Services = () => {
         <motion.div
             initial={{
                 opacity: 0,
-                y: 100
+                y: 30,
             }}
             whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
             }}
             transition={{
-                duration: 0.8
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{
-                once: true
+                once: true,
+                amount: 0.15,
             }}
         >
             <S.Section id="services">
@@ -84,7 +86,7 @@ export const Services = () => {
                             <FaBolt/>
                         </S.IconWrapper>
 
-                        <h3>Performance & Optimization</h3>
+                        <h3>Optimization & Scalability</h3>
 
                         <p>
                             Optimizing rendering performance, architecture

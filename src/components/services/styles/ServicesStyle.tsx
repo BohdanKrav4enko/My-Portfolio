@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const Section = styled.section`
-    scroll-margin-top: 120px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
@@ -104,13 +103,45 @@ const Card = styled.div`
     }
 `;
 
-export const FrontendCard = styled(Card)``;
+export const FrontendCard = styled(Card)`
+    background:
+            radial-gradient(
+                    circle at top right,
+                    rgba(124,92,255,.08),
+                    transparent 40%
+            ),
+            rgba(255,255,255,.03);
+`;
 
-export const UiCard = styled(Card)``;
+export const UiCard = styled(Card)`
+    background:
+            radial-gradient(
+                    circle at top right,
+                    rgba(124,92,255,.08),
+                    transparent 40%
+            ),
+            rgba(255,255,255,.03);
+`;
 
-export const ApiCard = styled(Card)``;
+export const ApiCard = styled(Card)`
+    background:
+            radial-gradient(
+                    circle at top right,
+                    rgba(124,92,255,.08),
+                    transparent 40%
+            ),
+            rgba(255,255,255,.03);
+`;
 
-export const PerformanceCard = styled(Card)``;
+export const PerformanceCard = styled(Card)`
+    background:
+            radial-gradient(
+                    circle at top right,
+                    rgba(124,92,255,.08),
+                    transparent 40%
+            ),
+            rgba(255,255,255,.03);
+`;
 
 interface IconProps {
     purple?: boolean;

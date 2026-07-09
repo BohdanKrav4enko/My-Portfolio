@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-    scroll-margin-top: 120px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;

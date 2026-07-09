@@ -1,10 +1,21 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Section = styled.section`
     min-height: 100vh;
     display: flex;
     align-items: center;
-
+    background:
+            radial-gradient(circle at top left,#00d4ff20,transparent 40%),
+            radial-gradient(circle at bottom right,#7c5cff20,transparent 40%);
     padding: 120px 40px;
 
     @media (max-width: 768px) {
@@ -23,7 +34,7 @@ export const Container = styled.div`
     gap: 80px;
     align-items: center;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         grid-template-columns: 1fr;
         gap: 32px;
         text-align: center;
@@ -31,7 +42,7 @@ export const Container = styled.div`
 `;
 
 export const Left = styled.div`
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         order: 2;
     }
 `;
@@ -40,7 +51,7 @@ export const Right = styled.div`
     display: flex;
     justify-content: center;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         order: 1;
         margin-bottom: 32px;
     }
@@ -59,7 +70,7 @@ export const Badge = styled.div`
 
     margin-bottom: 24px;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
@@ -106,7 +117,7 @@ export const Description = styled.p`
 
     margin-bottom: 20px;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         margin-left: auto;
         margin-right: auto;
     }
@@ -124,7 +135,7 @@ export const Buttons = styled.div`
     display: flex;
     gap: 20px;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1250px) {
         justify-content: center;
     }
 
@@ -241,23 +252,23 @@ export const ImageWrapper = styled.div`
     position: relative;
 
     border-radius: 50%;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     &::before {
         content: "";
-
+        animation: ${rotate} 15s linear infinite;
         position: absolute;
         inset: -10px;
 
         border-radius: 50%;
-
-        background: linear-gradient(
-                135deg,
+        background: conic-gradient(
+                from 0deg,
                 #00d4ff,
-                #7c5cff
+                #7c5cff,
+                #00d4ff
         );
 
         filter: blur(30px);

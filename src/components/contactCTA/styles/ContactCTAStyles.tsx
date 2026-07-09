@@ -4,7 +4,6 @@ export const Section = styled.section`
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
-    scroll-margin-top: 120px;
 
     @media (max-width: 768px) {
         padding: 80px 20px;
@@ -23,9 +22,8 @@ export const Phone = styled.a`
     font-size: 22px;
     font-weight: 600;
 
-    transition:
-            color .25s ease,
-            transform .25s ease;
+    transition: color .25s ease,
+    transform .25s ease;
 
     &:hover {
         color: #7c5cff;
@@ -46,15 +44,14 @@ export const Card = styled.div`
 
     border-radius: 40px;
 
-    background:
-            radial-gradient(
-                    circle at center,
-                    rgba(124,92,255,.25),
-                    transparent 70%
-            ),
-            rgba(255,255,255,.03);
+    background: radial-gradient(
+            circle at center,
+            rgba(124, 92, 255, .25),
+            transparent 70%
+    ),
+    rgba(255, 255, 255, .03);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255, 255, 255, .08);
 
     @media (max-width: 768px) {
         padding: 60px 24px;
@@ -132,18 +129,15 @@ export const Button = styled.a`
 
     cursor: pointer;
 
-    transition:
-            transform .25s ease,
-            box-shadow .25s ease;
+    transition: transform .25s ease,
+    box-shadow .25s ease;
 
-    box-shadow:
-            0 10px 30px rgba(124,92,255,.25);
+    box-shadow: 0 10px 30px rgba(124, 92, 255, .25);
 
     &:hover {
         transform: translateY(-2px);
 
-        box-shadow:
-                0 14px 35px rgba(124,92,255,.35);
+        box-shadow: 0 14px 35px rgba(124, 92, 255, .35);
     }
 
     &:active {
@@ -155,4 +149,36 @@ export const Button = styled.a`
         height: 56px;
         font-size: 16px;
     }
+`;
+export const Email = styled.a`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #b5b5b5;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: color .25s ease,
+    transform .25s ease;
+
+    &:hover {
+        color: #00d4ff;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
+`;
+export const ResponseTime = styled.p`
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    opacity: .8;
 `;

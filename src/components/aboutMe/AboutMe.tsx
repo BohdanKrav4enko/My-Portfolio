@@ -13,17 +13,19 @@ export const AboutMe = () => {
         <motion.div
             initial={{
                 opacity: 0,
-                y: 100
+                y: 30,
             }}
             whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
             }}
             transition={{
-                duration: 0.8
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{
-                once: true
+                once: true,
+                amount: 0.15,
             }}
         >
             <S.Section id="about">
@@ -42,17 +44,17 @@ export const AboutMe = () => {
                     <S.Card>
                         <FaCode/>
 
-                        <h3>Clean Code</h3>
+                        <h3>Clean & Scalable Code</h3>
 
                         <p>
-                            Writing maintainable, scalable and reusable code.
+                            Building maintainable and scalable applications using modern frontend practices.
                         </p>
                     </S.Card>
 
                     <S.Card>
                         <FaReact/>
 
-                        <h3>Modern Stack</h3>
+                        <h3>Modern Frontend Stack</h3>
 
                         <p>
                             React, TypeScript, Redux Toolkit and Next.js.
@@ -62,17 +64,17 @@ export const AboutMe = () => {
                     <S.Card>
                         <FaLaptopCode/>
 
-                        <h3>Responsive UI</h3>
+                        <h3>Responsive Interfaces</h3>
 
                         <p>
-                            Pixel-perfect interfaces for desktop and mobile.
+                            Creating responsive interfaces optimized for every screen size.
                         </p>
                     </S.Card>
 
                     <S.Card>
                         <FaRocket/>
 
-                        <h3>Continuous Learning</h3>
+                        <h3>Growth Mindset</h3>
 
                         <p>
                             Constantly improving skills and exploring new technologies.

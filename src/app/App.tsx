@@ -10,9 +10,10 @@ import {
     Services,
     TechStack
 } from "../components";
+import {useLenis} from "../hooks/useLenis.ts";
 
 export const App = () => {
-
+    useLenis();
     return <>
         <ScrollToTop/>
         <Navbar/>

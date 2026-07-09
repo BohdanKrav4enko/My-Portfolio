@@ -6,6 +6,9 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    html {
+        scroll-behavior: smooth;
+    }
 
     body {
         font-family: "Space Grotesk", sans-serif;
@@ -13,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
         color: white;
         overflow-x: hidden;
     }
-
+    
     #root {
         min-height: 100vh;
     }

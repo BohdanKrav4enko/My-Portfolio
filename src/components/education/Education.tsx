@@ -12,17 +12,19 @@ export const Education = () => {
         <motion.div
             initial={{
                 opacity: 0,
-                y: 100
+                y: 30,
             }}
             whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
             }}
             transition={{
-                duration: 0.8
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{
-                once: true
+                once: true,
+                amount: 0.15,
             }}
         >
             <S.Section id="education">
@@ -44,21 +46,21 @@ export const Education = () => {
                     <S.Content>
 
                         <S.Degree>
-                            Software Engineering
+                            Bachelor of Software Engineering
                         </S.Degree>
 
                         <S.University>
-                            National University of Shipbuilding
+                            Admiral Makarov National University of Shipbuilding
                         </S.University>
 
                         <S.Period>
-                            2017 — 2020
+                            │ 2017 — 2020
                         </S.Period>
 
                         <S.Description>
-                            Studied software architecture, algorithms,
-                            databases, object-oriented programming and
-                            software development methodologies.
+                            Built a strong foundation in software architecture,
+                            algorithms, databases and object-oriented programming,
+                            forming the basis for modern frontend development.
                         </S.Description>
 
                         <S.Tags>

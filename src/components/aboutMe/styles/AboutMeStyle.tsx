@@ -4,7 +4,11 @@ export const Section = styled.section`
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
-    scroll-margin-top: 120px;
+    svg {
+        filter: drop-shadow(
+                0 0 12px rgba(124,92,255,.4)
+        );
+    }
 `;
 
 export const Title = styled.h2`
@@ -51,7 +55,9 @@ export const Grid = styled.div`
 
 export const Card = styled.div`
     padding: 40px;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background: rgba(255,255,255,.03);
 
     border: 1px solid rgba(255,255,255,.06);

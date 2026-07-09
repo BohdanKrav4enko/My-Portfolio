@@ -6,6 +6,31 @@ import prev3 from "../../assets/portfolio Preview.webp";
 
 
 import {FaExternalLinkAlt, FaGithub, FaStar} from "react-icons/fa";
+import {getTechColor} from "../../utils/getTechColor.ts";
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: {
+        opacity: 0,
+        y: 24,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.3,
+            ease: [0.22, 1, 0.36, 1] as const,
+        },
+    },
+};
 
 const projects = [
     {
@@ -20,16 +45,16 @@ const projects = [
     {
         title: "Online store",
         description:
-            "Online store with product catalog, shopping cart, filters and responsive design.",
+            "E-commerce application featuring product filtering, shopping cart management and responsive UI.",
         image: prev2,
-        stack: ["React", "TypeScript", "Redux"],
+        stack: ["React", "TypeScript", "Redux Toolkit"],
         link: "https://shop-drab-delta.vercel.app/",
         git: "https://github.com/BohdanKrav4enko/Shop"
     },
     {
         title: "Portfolio",
         description:
-            "Modern portfolio website inspired by premium SaaS landing pages.",
+            "Personal portfolio featuring smooth animations, modern UI patterns and responsive layouts.",
         image: prev3,
         stack: ["React", "Styled Components", "Vite"],
         link: "https://bohdankrav4enko.github.io/Portfolio/",
@@ -40,19 +65,13 @@ const projects = [
 export const Projects = () => {
     return (
         <motion.div
-            initial={{
-                opacity: 0,
-                y: 100
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0
-            }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             transition={{
-                duration: 0.8
-            }}
-            viewport={{
-                once: true
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
             }}
         >
             <S.Section id="projects">
@@ -80,47 +99,66 @@ export const Projects = () => {
 
                 <S.Grid>
                     {projects.map((project) => (
-                        <S.Card key={project.title}>
+                        <motion.div
+                            key={project.title}
+                            variants={cardVariants}
+                        >
+                            <S.Card>
 
-                            <S.Link
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <S.Image src={project.image} alt={project.title} />
-                            </S.Link>
+                                <S.Link
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <S.Image
+                                        src={project.image}
+                                        alt={project.title}
+                                    />
+                                </S.Link>
 
-                            <S.Content>
+                                <S.Content>
 
-                                <S.ProjectTitle>
-                                    {project.title}
-                                </S.ProjectTitle>
+                                    <S.ProjectTitle>
+                                        {project.title}
+                                    </S.ProjectTitle>
 
-                                <S.Description>
-                                    {project.description}
-                                </S.Description>
+                                    <S.Description>
+                                        {project.description}
+                                    </S.Description>
 
-                                <S.Tags>
-                                    {project.stack.map((tech) => (
-                                        <S.Tag key={tech}>
-                                            {tech}
-                                        </S.Tag>
-                                    ))}
-                                </S.Tags>
+                                    <S.Tags>
+                                        {project.stack.map((tech) => (
+                                            <S.Tag
+                                                key={tech}
+                                                color={getTechColor(tech)}
+                                            >
+                                                {tech}
+                                            </S.Tag>
+                                        ))}
+                                    </S.Tags>
 
-                                <S.Links>
-                                    <S.Link target={'_blank'} href={project.git}>
-                                        <FaGithub/>GitHub
-                                    </S.Link>
+                                    <S.Links>
+                                        <S.Link
+                                            target="_blank"
+                                            href={project.git}
+                                        >
+                                            <FaGithub />
+                                            GitHub
+                                        </S.Link>
 
-                                    <S.Link target={'_blank'} href={project.link}>
-                                        <FaExternalLinkAlt/>Live Demo
-                                    </S.Link>
-                                </S.Links>
+                                        <S.Link
+                                            target="_blank"
+                                            href={project.link}
+                                        >
+                                            <FaExternalLinkAlt />
+                                            Live Demo
+                                        </S.Link>
+                                    </S.Links>
 
-                            </S.Content>
+                                </S.Content>
 
-                        </S.Card>
+                            </S.Card>
+                        </motion.div>
                     ))}
                 </S.Grid>
 

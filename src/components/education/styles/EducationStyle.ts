@@ -4,7 +4,6 @@ export const Section = styled.section`
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 40px;
-    scroll-margin-top: 120px;
 `;
 
 export const Title = styled.h2`
@@ -89,7 +88,7 @@ export const IconWrapper = styled.div`
 
     background: rgba(124,92,255,.15);
 
-    color: #7c5cff;
+    color: rgba(124,92,255,.85);
 
     font-size: 48px;
 `;
