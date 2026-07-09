@@ -202,6 +202,8 @@ export const SecondaryButton = styled.a`
     width: 170px;
     height: 54px;
 
+    padding: 0 16px;
+
     border-radius: 999px;
 
     border: 1px solid rgba(255,255,255,.12);
@@ -211,8 +213,12 @@ export const SecondaryButton = styled.a`
     color: white;
     text-decoration: none;
 
-    font-size: 16px;
+    font-size: clamp(12px, 1vw, 16px);
     font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     cursor: pointer;
 
@@ -240,7 +246,8 @@ export const SecondaryButton = styled.a`
     @media (max-width: 480px) {
         width: 150px;
         height: 50px;
-        font-size: 14px;
+        font-size: 12px;
+        padding: 0 12px;
     }
 `;
 
