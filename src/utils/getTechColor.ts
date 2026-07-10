@@ -28,6 +28,9 @@ export const getTechColor = (tech: string): string => {
         case "Next.js":
             return "#ffffff";
 
+        case "React Hook Form":
+            return "#EC5990";
+
         default:
             return "#7c5cff";
     }
