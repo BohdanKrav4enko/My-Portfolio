@@ -25,6 +25,7 @@ export const Title = styled.h2`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
     @media (max-width: 480px) {
         font-size: 32px;
     }
@@ -42,7 +43,7 @@ export const Subtitle = styled.p`
     line-height: 1.8;
 `;
 
-export const Card = styled.div`
+export const Card = styled.article`
     max-width: 900px;
 
     margin: 0 auto;
@@ -59,7 +60,7 @@ export const Card = styled.div`
 
     border: 1px solid rgba(255,255,255,.06);
 
-    transition: .3s;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 
     &:hover {
         transform: translateY(-8px);
@@ -67,7 +68,7 @@ export const Card = styled.div`
         border-color: rgba(124,92,255,.4);
 
         box-shadow:
-            0 0 40px rgba(124,92,255,.15);
+                0 0 40px rgba(124,92,255,.15);
     }
 
     @media (max-width: 768px) {
@@ -100,39 +101,60 @@ export const Content = styled.div`
 export const Degree = styled.h3`
     font-size: 36px;
     margin-bottom: 10px;
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+    }
 `;
 
-export const University = styled.h4`
+export const University = styled.p`
     color: #d0d0d0;
+
     font-size: 22px;
+
     margin-bottom: 12px;
 `;
 
-export const Period = styled.div`
+export const Period = styled.time`
+    display: block;
+
     color: #7c5cff;
+
     font-weight: 600;
+
     margin-bottom: 24px;
 `;
 
 export const Description = styled.p`
     color: #999;
+
     line-height: 1.8;
+
     margin-bottom: 28px;
 `;
 
-export const Tags = styled.div`
+export const Tags = styled.ul`
     display: flex;
+
     gap: 16px;
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
     @media (max-width: 640px) {
         flex-direction: column;
-        justify-content: center;
+
         align-items: center;
     }
 `;
 
-export const Tag = styled.div`
+export const Tag = styled.li`
     display: flex;
+
     align-items: center;
+
     gap: 8px;
 
     padding: 10px 18px;
@@ -146,14 +168,14 @@ export const Tag = styled.div`
     svg {
         color: #7c5cff;
     }
+
     @media (max-width: 800px) {
-    
         min-width: calc(50% - 8px);
     }
 
     @media (max-width: 480px) {
         min-width: 100%;
+
         padding: 12px 20px;
-       
     }
 `;

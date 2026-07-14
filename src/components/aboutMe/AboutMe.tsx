@@ -1,18 +1,19 @@
 import * as S from "./styles/AboutMeStyle";
-import {useTranslation} from "react-i18next";
-import {AboutMeCard} from "./aboutMeItems/AboutMeCard";
-import {aboutMeData} from "./aboutMeItems/aboutMeData";
-import {AnimatedSection} from "../animatedSection";
+import { useTranslation } from "react-i18next";
+import { AboutMeCard } from "./aboutMeItems/AboutMeCard";
+import { aboutMeData } from "./aboutMeItems/aboutMeData";
+import { AnimatedSection } from "../animatedSection";
 
 export const AboutMe = () => {
-
     const { t } = useTranslation();
 
     return (
         <AnimatedSection>
-            <S.Section id="about">
-
-                <S.Title>
+            <S.Section
+                id="about"
+                aria-labelledby="about-title"
+            >
+                <S.Title id="about-title">
                     {t("about.titleFirst")}{" "}
                     <span>{t("about.titleSecond")}</span>
                 </S.Title>
@@ -31,7 +32,6 @@ export const AboutMe = () => {
                         />
                     ))}
                 </S.Grid>
-
             </S.Section>
         </AnimatedSection>
     );

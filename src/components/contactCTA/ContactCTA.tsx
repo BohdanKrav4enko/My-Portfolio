@@ -1,36 +1,36 @@
 import * as S from "./styles/ContactCTAStyles.tsx";
-import {useTranslation} from "react-i18next";
-import {AnimatedSection} from "../animatedSection";
-import {EMAIL, PHONE, PHONE_FORMATTED} from "../../constants/contacts.ts";
-import {Socials} from "../Socials.tsx";
+import { useTranslation } from "react-i18next";
+import { AnimatedSection } from "../animatedSection";
+import { EMAIL, PHONE, PHONE_FORMATTED } from "../../constants/contacts.ts";
+import { Socials } from "../Socials.tsx";
 
 export const ContactCTA = () => {
-
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <AnimatedSection>
-            <S.Section id="contact">
+            <S.Section
+                id="contact"
+                aria-labelledby="contact-title"
+            >
                 <S.Card>
-
-                    <S.Title>
+                    <S.Title id="contact-title">
                         {t("contact.title")}
                     </S.Title>
 
                     <S.Text>
                         {t("contact.description")}
                     </S.Text>
-                    <S.Text>
+
+                    <S.ContactInfo>
                         <S.Phone href={`tel:${PHONE}`}>
                             {PHONE_FORMATTED}
                         </S.Phone>
-                    </S.Text>
 
-                    <S.Text>
                         <S.Email href={`mailto:${EMAIL}`}>
                             {EMAIL}
                         </S.Email>
-                    </S.Text>
+                    </S.ContactInfo>
 
                     <S.Button href={`mailto:${EMAIL}`}>
                         {t("contact.button")}
@@ -39,10 +39,12 @@ export const ContactCTA = () => {
                     <S.ResponseTime>
                         {t("contact.responseTime")}
                     </S.ResponseTime>
-                    <S.SocialsContainer>
-                        <Socials/>
-                    </S.SocialsContainer>
 
+                    <S.SocialsContainer
+                        aria-label={t("contact.socials")}
+                    >
+                        <Socials />
+                    </S.SocialsContainer>
                 </S.Card>
             </S.Section>
         </AnimatedSection>

@@ -1,5 +1,5 @@
 import * as S from "../styles/AboutMeStyle";
-import type {IconType} from "react-icons";
+import type { IconType } from "react-icons";
 
 interface AboutMeItemProps {
     icon: IconType;
@@ -14,7 +14,7 @@ export const AboutMeCard = ({
                             }: AboutMeItemProps) => {
     return (
         <S.Card>
-            <Icon />
+            <Icon aria-hidden="true" focusable="false" />
 
             <h3>{title}</h3>
 

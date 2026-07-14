@@ -1,18 +1,18 @@
-import {AnimatedSection} from "../animatedSection";
+import { AnimatedSection } from "../animatedSection";
 import * as S from "./styles/EducationStyle";
-import {useTranslation} from "react-i18next";
-import {FaCode, FaGraduationCap, FaUniversity} from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
+import { FaCode, FaGraduationCap, FaUniversity } from "react-icons/fa";
 
 export const Education = () => {
-
     const { t } = useTranslation();
 
     return (
         <AnimatedSection>
-            <S.Section id="education">
-
-                <S.Title>
+            <S.Section
+                id="education"
+                aria-labelledby="education-title"
+            >
+                <S.Title id="education-title">
                     {t("education.titleFirst")}{" "}
                     <span>{t("education.titleSecond")}</span>
                 </S.Title>
@@ -24,7 +24,10 @@ export const Education = () => {
                 <S.Card>
 
                     <S.IconWrapper>
-                        <FaGraduationCap/>
+                        <FaGraduationCap
+                            aria-hidden="true"
+                            focusable="false"
+                        />
                     </S.IconWrapper>
 
                     <S.Content>
@@ -38,7 +41,7 @@ export const Education = () => {
                         </S.University>
 
                         <S.Period>
-                            │ 2017 — 2020
+                            2017 — 2020
                         </S.Period>
 
                         <S.Description>
@@ -47,12 +50,18 @@ export const Education = () => {
 
                         <S.Tags>
                             <S.Tag>
-                                <FaCode/>
+                                <FaCode
+                                    aria-hidden="true"
+                                    focusable="false"
+                                />
                                 {t("education.tags.programming")}
                             </S.Tag>
 
                             <S.Tag>
-                                <FaUniversity/>
+                                <FaUniversity
+                                    aria-hidden="true"
+                                    focusable="false"
+                                />
                                 {t("education.tags.higherEducation")}
                             </S.Tag>
                         </S.Tags>

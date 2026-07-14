@@ -39,43 +39,45 @@ export const Subtitle = styled.p`
     margin: 24px auto 80px;
 `;
 
-export const Grid = styled.div`
+export const Grid = styled.ul`
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 
-    @media(max-width:1100px){
-        grid-template-columns: repeat(2,1fr);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    @media(max-width:768px){
+    @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
 `;
 
-export const Card = styled.div`
+export const Card = styled.li`
     padding: 40px;
     height: 100%;
     display: flex;
     flex-direction: column;
 
-    background: rgba(255,255,255,.03);
-
-    border: 1px solid rgba(255,255,255,.06);
-
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 28px;
 
-    transition: .3s;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 
     &:hover {
         transform: translateY(-10px);
-        border-color:#7c5cff;
+        border-color: #7c5cff;
     }
 
     svg {
         font-size: 42px;
         margin-bottom: 24px;
-        color:#7c5cff;
+        color: #7c5cff;
         flex-shrink: 0;
     }
 
@@ -87,11 +89,10 @@ export const Card = styled.div`
     }
 
     p {
-        color:#999;
-        line-height:1.8;
+        color: #999;
+        line-height: 1.8;
         font-size: clamp(14px, 1.2vw, 16px);
     }
-
 
     @media (max-width: 768px) {
         padding: 32px;
@@ -100,7 +101,6 @@ export const Card = styled.div`
             font-size: 22px;
         }
     }
-
 
     @media (max-width: 480px) {
         padding: 28px 24px;

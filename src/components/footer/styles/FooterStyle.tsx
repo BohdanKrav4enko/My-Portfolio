@@ -30,16 +30,20 @@ export const Left = styled.div`
     max-width: 500px;
 `;
 
-export const Logo = styled.h2`
+export const Logo = styled.p`
     font-size: 42px;
 
-    margin-bottom: 16px;
+    font-weight: 700;
+
+    margin: 0 0 16px;
+
+    line-height: 1.2;
 
     span {
         background: linear-gradient(
-            90deg,
-            #7c5cff,
-            #00d4ff
+                90deg,
+                #7c5cff,
+                #00d4ff
         );
 
         -webkit-background-clip: text;
@@ -53,8 +57,14 @@ export const Description = styled.p`
     line-height: 1.8;
 `;
 
+export const SocialNav = styled.nav`
+    display: flex;
+    align-items: center;
+`;
+
 export const Right = styled.div`
     display: flex;
+
     gap: 16px;
 `;
 
@@ -63,6 +73,7 @@ export const Social = styled.a`
     height: 54px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -76,7 +87,10 @@ export const Social = styled.a`
 
     font-size: 20px;
 
-    transition: .3s;
+    transition:
+            transform .3s ease,
+            border-color .3s ease,
+            box-shadow .3s ease;
 
     &:hover {
         transform: translateY(-6px);
@@ -84,11 +98,18 @@ export const Social = styled.a`
         border-color: #7c5cff;
 
         box-shadow:
-            0 0 25px rgba(124,92,255,.3);
+                0 0 25px rgba(124,92,255,.3);
+    }
+
+    &:focus-visible {
+        outline: 3px solid #00d4ff;
+        outline-offset: 4px;
     }
 `;
 
-export const Bottom = styled.div`
+export const Bottom = styled.small`
+    display: block;
+
     padding-top: 32px;
 
     border-top: 1px solid rgba(255,255,255,.05);

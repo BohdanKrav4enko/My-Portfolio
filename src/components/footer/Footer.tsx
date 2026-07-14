@@ -1,10 +1,9 @@
 import * as S from "./styles/FooterStyle";
-import {useTranslation} from "react-i18next";
-import {Socials} from "../Socials.tsx";
+import { useTranslation } from "react-i18next";
+import { Socials } from "../Socials.tsx";
 
 export const Footer = () => {
-
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <S.Footer>
@@ -23,7 +22,9 @@ export const Footer = () => {
 
                 </S.Left>
 
-                <Socials/>
+                <S.SocialNav aria-label={t("footer.socialLinks")}>
+                    <Socials />
+                </S.SocialNav>
 
             </S.Container>
 

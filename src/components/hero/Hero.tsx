@@ -11,7 +11,7 @@ export const Hero = () => {
     const { t } = useTranslation();
 
     return (<>
-            <S.Section id="home">
+            <S.Section aria-labelledby="hero-title" id="home">
                 <S.Container>
 
                     <S.Left>
@@ -19,7 +19,7 @@ export const Hero = () => {
                             {t("hero.badge")}
                         </S.Badge>
 
-                        <S.Title>
+                        <S.Title id="hero-title">
                             {t("hero.titleFirst")} <br/>
                             <span>{t("hero.titleSecond")}</span>
                         </S.Title>
@@ -29,13 +29,14 @@ export const Hero = () => {
                         </S.Description>
 
                         <S.Buttons>
-                            <S.PrimaryButton onClick={() => scrollToSection("contact")}>
+                            <S.PrimaryButton aria-label={t("hero.contact")} onClick={() => scrollToSection("contact")}>
                                 {t("hero.contact")}
                             </S.PrimaryButton>
 
                             <S.SecondaryButton
                                 href={CV_URL_EN}
                                 download
+                                aria-label={t("hero.download")}
                             >
                                 {t("hero.download")}
                             </S.SecondaryButton>
@@ -44,7 +45,7 @@ export const Hero = () => {
 
                     <S.Right>
                         <S.ImageWrapper>
-                            <S.Avatar alt={'Avatar'} src={img}/>
+                            <S.Avatar alt="Bohdan Kravchenko portrait" src={img}/>
                         </S.ImageWrapper>
                     </S.Right>
 
