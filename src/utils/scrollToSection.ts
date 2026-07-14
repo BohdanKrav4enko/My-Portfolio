@@ -9,9 +9,4 @@ export const scrollToSection = (id: string) => {
         behavior: "smooth",
         block: "start",
     });
-
-    element.setAttribute("tabindex", "-1");
-    element.focus({
-        preventScroll: true,
-    });
 };
