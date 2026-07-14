@@ -171,8 +171,10 @@ export const Card = styled.div`
 export const Image = styled.img`
     width: 100%;
     display: block;
-    height: 220px;
+    height: 260px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
+    object-position: top;
     cursor: pointer;
     transition: .3s;
 `;

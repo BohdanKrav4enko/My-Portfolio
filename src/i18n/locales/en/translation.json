@@ -54,8 +54,8 @@
       "kinoPotok": {
         "description": "Movie streaming platform with search, categories, ratings and detailed information about films."
       },
-      "shop": {
-        "description": "E-commerce application featuring product filtering, shopping cart management and responsive UI."
+      "velion": {
+        "description": "E-commerce platform with a product catalog, admin panel, shopping cart, and responsive interface."
       },
       "lumiere": {
         "description": "Premium restaurant landing page crafted with smooth interactions, refined typography and responsive layouts."

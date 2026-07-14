@@ -1,6 +1,6 @@
-import prev1 from "../../../assets/kinoPotok Preview.webp";
-import prev2 from "../../../assets/shop Preview.webp";
-import prev3 from "../../../assets/lumiere Preview.png";
+import prev1 from "../../../assets/kinopotokPreview.webp";
+import prev2 from "../../../assets/VelionPreview.webp";
+import prev3 from "../../../assets/lumierePreview.webp";
 
 export interface Project {
     title: string;
@@ -21,12 +21,12 @@ export const projects: Project[] = [
         git: "https://github.com/BohdanKrav4enko/kinopotok",
     },
     {
-        title: "Online store",
-        description: "shop",
+        title: "Velion",
+        description: "velion",
         image: prev2,
-        stack: ["React", "TypeScript", "Redux Toolkit"],
-        link: "https://shop-drab-delta.vercel.app/",
-        git: "https://github.com/BohdanKrav4enko/Shop",
+        stack: ["RTK Query", "Zod", "Redux Toolkit"],
+        link: "https://velion-marketplace.vercel.app/",
+        git: "https://github.com/BohdanKrav4enko/Velion",
     },
     {
         title: "L U M I È R E",
