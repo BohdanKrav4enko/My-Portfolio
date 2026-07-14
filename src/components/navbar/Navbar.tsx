@@ -26,8 +26,7 @@ export const Navbar = () => {
     return (
         <S.Wrapper>
             <S.Container>
-                <S.Logo>BK</S.Logo>
-
+                <S.Logo onClick={()=> scrollToSection("home")}>BK</S.Logo>
                 <S.Menu>
                     <DesktopMenu
                         links={links}

@@ -201,58 +201,53 @@ export const PrimaryButton = styled.a`
     display: flex;
 
     align-items: center;
-
     justify-content: center;
-
+    cursor: pointer;
     width: 170px;
-
     height: 54px;
 
     border-radius: 999px;
 
-    background: linear-gradient(
-            135deg,
-            #00d4ff,
-            #7c5cff
-    );
+    border: 2px solid transparent;
 
-    color: white;
+    background:
+            linear-gradient(#0b1020, #0b1020) padding-box,
+            linear-gradient(
+                    135deg,
+                    #22d3ee 0%,
+                    #7c3aed 100%
+            ) border-box;
+
+    color: #fff;
 
     text-decoration: none;
 
     font-size: 16px;
-
     font-weight: 600;
-
 
     transition:
             transform .25s ease,
             box-shadow .25s ease;
 
-
     box-shadow:
-            0 8px 20px rgba(124,92,255,.25);
-
+            0 8px 20px rgba(124, 58, 237, .2);
 
     &:hover {
         transform: translateY(-2px);
 
         box-shadow:
-                0 12px 28px rgba(124,92,255,.35);
+                0 12px 30px rgba(124, 58, 237, .35);
     }
-
 
     &:active {
         transform: translateY(0);
     }
 
-
     &:focus-visible {
-        outline: 3px solid #00d4ff;
+        outline: 3px solid #22d3ee;
 
         outline-offset: 4px;
     }
-
 
     @media (max-width: 480px) {
         width: 150px;

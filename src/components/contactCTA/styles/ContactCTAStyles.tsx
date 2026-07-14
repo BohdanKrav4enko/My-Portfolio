@@ -147,6 +147,7 @@ export const Email = styled.a`
 
 export const Button = styled.a`
     display: inline-flex;
+
     justify-content: center;
     align-items: center;
 
@@ -155,13 +156,18 @@ export const Button = styled.a`
 
     border-radius: 999px;
 
-    background: linear-gradient(
-            135deg,
-            #00d4ff 0%,
-            #7c5cff 100%
-    );
+    border: 2px solid transparent;
+
+    background:
+            linear-gradient(#0b1020, #0b1020) padding-box,
+            linear-gradient(
+                    135deg,
+                    #22d3ee 0%,
+                    #7c3aed 100%
+            ) border-box;
 
     color: #fff;
+
     text-decoration: none;
 
     font-size: 18px;
@@ -173,11 +179,14 @@ export const Button = styled.a`
             transform 0.25s ease,
             box-shadow 0.25s ease;
 
-    box-shadow: 0 10px 30px rgba(124, 92, 255, 0.25);
+    box-shadow:
+            0 10px 30px rgba(124, 58, 237, 0.25);
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 14px 35px rgba(124, 92, 255, 0.35);
+
+        box-shadow:
+                0 14px 35px rgba(124, 58, 237, 0.35);
     }
 
     &:active {
@@ -185,7 +194,8 @@ export const Button = styled.a`
     }
 
     &:focus-visible {
-        outline: 3px solid #00d4ff;
+        outline: 3px solid #22d3ee;
+
         outline-offset: 4px;
     }
 

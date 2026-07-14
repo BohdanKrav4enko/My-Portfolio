@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
     width: min(1200px, calc(100% - 32px));
     z-index: 1000;
-    
+
     height: 72px;
 
     display: flex;
@@ -36,8 +36,7 @@ export const Container = styled.div`
 
     border: 1px solid rgba(255, 255, 255, 0.06);
 
-    box-shadow:
-            0 8px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
 
     @media (max-width: 1250px) {
         height: 64px;
@@ -58,19 +57,26 @@ export const Logo = styled.div`
     font-size: 18px;
     font-weight: 700;
 
-    color: white;
+    color: #fff;
 
-    background: linear-gradient(
+    background: #0b1020;
+
+    border: 2px solid transparent;
+    background-image: linear-gradient(#0b1020, #0b1020),
+    linear-gradient(
             135deg,
-            #00d4ff 0%,
-            #00d4ff 35%,
-            #7c5cff 65%,
-            #7c5cff 100%
+            #22d3ee 0%,
+            #7c3aed 100%
     );
+
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
     flex-shrink: 0;
 
     cursor: pointer;
+
+    letter-spacing: -0.5px;
 
     @media (max-width: 1250px) {
         width: 42px;
@@ -134,12 +140,12 @@ export const Menu = styled.nav`
             &::after {
                 width: 100%;
 
-                box-shadow:
-                        0 0 10px #00d4ff,
-                        0 0 20px #7c5cff;
+                box-shadow: 0 0 10px #00d4ff,
+                0 0 20px #7c5cff;
             }
         }
     }
+
     @media (max-width: 830px) {
         gap: 12px;
     }
@@ -158,24 +164,31 @@ export const ContactButton = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    height: 48px;
 
+    text-decoration: none;
+
+    height: 48px;
     padding: 0 24px;
 
-    border: none;
     border-radius: 999px;
 
-    background: linear-gradient(
-            135deg,
-            #00d4ff 0%,
-            #7c5cff 100%
-    );
-
-    color: white;
+    color: #fff;
 
     font-size: 14px;
     font-weight: 600;
+
+    background: #0b1020;
+
+    border: 2px solid transparent;
+    background-image: linear-gradient(#0b1020, #0b1020),
+    linear-gradient(
+            135deg,
+            #22d3ee 0%,
+            #7c3aed 100%
+    );
+
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
     cursor: pointer;
 
@@ -184,8 +197,7 @@ export const ContactButton = styled.a`
     &:hover {
         transform: translateY(-2px);
 
-        box-shadow:
-                0 10px 30px rgba(124, 92, 255, 0.35);
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
     }
 
     &:active {
@@ -196,9 +208,11 @@ export const ContactButton = styled.a`
         display: none;
     }
 `;
+
 interface BurgerProps {
     $open: boolean;
 }
+
 export const BurgerButton = styled.button<BurgerProps>`
     display: none;
 
@@ -228,23 +242,23 @@ export const BurgerButton = styled.button<BurgerProps>`
     }
 
     span:nth-child(1) {
-        top: ${({ $open }) => ($open ? "23px" : "16px")};
+        top: ${({$open}) => ($open ? "23px" : "16px")};
 
-        transform: ${({ $open }) =>
-    $open ? "rotate(45deg)" : "rotate(0deg)"};
+        transform: ${({$open}) =>
+                $open ? "rotate(45deg)" : "rotate(0deg)"};
     }
 
     span:nth-child(2) {
         top: 23px;
 
-        opacity: ${({ $open }) => ($open ? 0 : 1)};
+        opacity: ${({$open}) => ($open ? 0 : 1)};
     }
 
     span:nth-child(3) {
-        top: ${({ $open }) => ($open ? "23px" : "30px")};
+        top: ${({$open}) => ($open ? "23px" : "30px")};
 
-        transform: ${({ $open }) =>
-    $open ? "rotate(-45deg)" : "rotate(0deg)"};
+        transform: ${({$open}) =>
+                $open ? "rotate(-45deg)" : "rotate(0deg)"};
     }
 
     @media (max-width: 1250px) {
@@ -257,10 +271,8 @@ export const MobileMenu = styled.div<BurgerProps>`
     top: 100px;
     left: 50%;
 
-    transform:
-        translateX(-50%)
-        ${({ $open }) =>
-    $open ? "translateY(0)" : "translateY(-20px)"};
+    transform: translateX(-50%) ${({$open}) =>
+            $open ? "translateY(0)" : "translateY(-20px)"};
 
     width: calc(100% - 32px);
     max-width: 500px;
@@ -269,14 +281,14 @@ export const MobileMenu = styled.div<BurgerProps>`
 
     border-radius: 32px;
 
-    background: rgba(15,15,15,.92);
+    background: rgba(15, 15, 15, .92);
 
     backdrop-filter: blur(30px);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255, 255, 255, .08);
 
-    opacity: ${({ $open }) => ($open ? 1 : 0)};
-    visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
+    opacity: ${({$open}) => ($open ? 1 : 0)};
+    visibility: ${({$open}) => ($open ? "visible" : "hidden")};
 
     transition: .35s;
 
@@ -289,6 +301,7 @@ export const MobileMenu = styled.div<BurgerProps>`
         color: white;
         text-decoration: none;
         font-size: 18px;
+
         &.active {
             color: #00d4ff;
         }
@@ -296,31 +309,54 @@ export const MobileMenu = styled.div<BurgerProps>`
 
     button {
         height: 52px;
+        padding: 0 24px;
 
-        border: none;
         border-radius: 999px;
+
+        border: 2px solid transparent;
+
+        background: linear-gradient(#0b1020, #0b1020) padding-box,
+        linear-gradient(
+                135deg,
+                #22d3ee 0%,
+                #7c3aed 100%
+        ) border-box;
+
+        color: #fff;
 
         font-weight: 600;
 
         cursor: pointer;
+
+        transition: .25s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
     }
 
     @media (min-width: 1250px) {
         display: none;
     }
-`;
+`
 export const Overlay = styled.div<BurgerProps>`
     position: fixed;
 
     inset: 0;
 
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
 
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 
-    opacity: ${({ $open }) => ($open ? 1 : 0)};
-    visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
+    opacity: ${({$open}) => ($open ? 1 : 0)};
+    visibility: ${({$open}) => ($open ? "visible" : "hidden")};
 
     transition: .3s;
 
